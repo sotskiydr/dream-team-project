@@ -1,12 +1,33 @@
+<!-- HEADER SECTION -->
 <header class="header">
   <div class="container">
-<!--logo-->
-<a href="./index.html" class="header__logo">
-  <svg class="header__logo-icon">
-    <use href="../src/images/sprite.svg#icon-film"></use>
-  </svg>
-<span class="logo__text">Filmoteka</span>
-</a>
-<!-- logo end -->
+    <nav class="header__site-nav">
+      <!--logo-->
+
+      <a href="./index.html" class="logo">
+        <svg class="logo__icon">
+          <use href="../src/images/sprite.svg#icon-film"></use>
+        </svg>
+        <span class="logo__text">Filmoteka</span>
+      </a>
+
+      <!-- logo end -->
+
+      <ul class="header__nav_links">
+        <li class="header__nav_list_item"><a href="#" class="header__home_link">home</a></li>
+        <li class="header__nav_list_item"><a href="#" class="header__lib_link">my library</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__input_wrapper">
+      <input type="text" name="input" class="header__input" placeholder="Поиск фильмов" />
+      <button class="header__search_btn">
+        <svg class="header__search-btn-icon">
+          <use href="../src/images/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+    </div>
   </div>
-  </header>
+</header>
+
+<!-- END HEADER SECTION -->
