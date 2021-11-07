@@ -10,10 +10,10 @@
   background-position: center;
   margin: 0 auto;
 
-  &__site-nav{
+  &__site-nav {
     display: flex;
     padding-top: 41px;
-    justify-content: space-between
+    justify-content: space-between;
   }
 
   &__nav_links {
@@ -31,25 +31,41 @@
     margin-top: 18px;
   }
 
-
-  
   &__input_wrapper {
-    position: relative;
+    margin-top: 40px;
+    text-align: center;
   }
 
   &__input {
-    width: 280px;
+    width: 275px;
     height: 20px;
+    padding-right: 25px;
+    color: #ffffff;
+    background-color: transparent;
+    outline: 0;
+    border-width: 0 0 0.5px;
+    border-color: #ffffff;
+  }
+
+  &__input::placeholder {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
   }
 
   &__search_btn {
-    position: absolute;
-    top: 0;
-    right: 0px;
-    z-index: 2;
-    transform: translateX(2px);
+    margin-left: -25px;
+    height: 25px;
+    width: 25px;
+    background: transparent;
+    border: 0;
+    padding: 0;
   }
 
+  &__search-btn-icon {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 .logo {
@@ -66,7 +82,6 @@
   }
 }
 
-
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
   (min-resolution: 2dppx) and (min-width: 320px) {
@@ -81,6 +96,10 @@
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/hero/hero_tablet@1x.jpg');
+
+    &__input {
+      width: 336px;
+    }
   }
   .logo__text {
     display: contents;
