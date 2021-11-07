@@ -2,7 +2,6 @@
 .header {
   background-color: rgb(25, 25, 25);
   height: 230px;
-  padding-top: 43px;
   color: #ffffff;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/hero/hero_mobile@1x.jpg');
@@ -11,6 +10,29 @@
   background-position: center;
   margin: 0 auto;
 
+  &__site-nav{
+    display: flex;
+    padding-top: 41px;
+    justify-content: space-between
+  }
+
+  &__nav_links {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    align-items: flex-end;
+    display: flex;
+    margin-left: -40px;
+    margin-top: -18px;
+  }
+
+  &__nav_list_item {
+    margin-left: 40px;
+    margin-top: 18px;
+  }
+
+
+  
   &__input_wrapper {
     position: relative;
   }
@@ -27,25 +49,23 @@
     z-index: 2;
     transform: translateX(2px);
   }
+
 }
 
-.header__logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 175px;
+.logo {
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    display: none;
+  }
 }
 
-.header__logo-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.logo__text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-}
 
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
@@ -53,9 +73,6 @@
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/hero/hero_mobile@2x.jpg');
-  }
-  .logo__text {
-    visibility: hidden;
   }
 }
 
@@ -66,7 +83,7 @@
       url('../images/hero/hero_tablet@1x.jpg');
   }
   .logo__text {
-    visibility: visible;
+    display: contents;
   }
 }
 
