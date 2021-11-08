@@ -3,7 +3,7 @@
                 <img class="gallery__img" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt={{title}} />
                 <div class="gallery__description">
                     <p class="gallery__title">{{title}}</p>
-                    <p class="gallery__text">{{genre_ids}} | {{release_date}}</p>
+                    <p class="gallery__text">{{#each genre_ids}} {{name}} {{/each}} | {{release_date}}</p>
                 </div>
             </li>
 {{/each}}
