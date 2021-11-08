@@ -1,5 +1,5 @@
 body {
-  //font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   //color: $mainColor;
 }
 
@@ -25,11 +25,11 @@ p {
   margin: 0;
 }
 
-//img {
-//  display: block;
-//  // max-width: 100%;
-//  height: auto;
-//}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 .hidden {
   position: absolute;
