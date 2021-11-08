@@ -18,7 +18,9 @@ module.exports={genres:[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,na
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=o;var e=s(require("../js/api/API")),t=s(require("../templates/main-galleru.hbs")),r=s(require("./refs")),n=s(require("./data/genresData.json"));function s(e){return e&&e.__esModule?e:{default:e}}const a=new e.default,{galleryList:i}=r.default;async function o(){try{const r=await a.getTrandingMovie();l(r),u(r,n.default);const s=(0,t.default)(r);i.insertAdjacentHTML("beforeend",s)}catch(e){console.log("error")}}function l(e){const t=e.results;for(const r in t)t[r].release_date=t[r].release_date.slice(0,4);return t}function u(e,t){const r=e.results,n=t.genres;for(const s in r)r[s].genre_ids=r[s].genre_ids.map(e=>n.filter(t=>t.id===e)).slice(0,3).flat();return r}
 },{"../js/api/API":"eByr","../templates/main-galleru.hbs":"Z1JL","./refs":"VyiV","./data/genresData.json":"nWYo"}],"GxH7":[function(require,module,exports) {
 "use strict";var e=t(require("./render-gallery")),r=t(require("./refs"));function t(e){return e&&e.__esModule?e:{default:e}}const{logoEl:l,homeLink:d}=r.default;(0,e.default)(),l.addEventListener("click",e.default),d.addEventListener("click",e.default);
-},{"./render-gallery":"x2zJ","./refs":"VyiV"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main");
-},{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-team-project/src.07b4f34b.js.map
+},{"./render-gallery":"x2zJ","./refs":"VyiV"}],"o8lo":[function(require,module,exports) {
+"use strict";var e=n(require("../js/api/API"));function n(e){return e&&e.__esModule?e:{default:e}}const t=new e.default;t.getTrandingMovie().then(e=>console.log(e));
+},{"../js/api/API":"eByr"}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main"),require("./js/pagination");
+},{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7","./js/pagination":"o8lo"}]},{},["Focm"], null)
+//# sourceMappingURL=/dream-team-project/src.0fab9840.js.map
