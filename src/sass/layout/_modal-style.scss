@@ -10,24 +10,34 @@ table td {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  // border: 1px solid #2a2a2a;
 }
 .movie_name{
   text-transform: uppercase;
   width: auto;
-  height: 31px;
   margin-bottom: 20px;
   font-weight: 500;
-  font-size: 30px;
+ 
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+  height: 21px;
+  font-size: 20px;
+  line-height: 23px;
+  }
+@media screen and (min-width: 1024px) {
+  height: 31px;
   line-height: 35px;
-  margin-bottom: 20px;
+}
 }
 .moda_table-list{
   margin-bottom: 20px;
 }
 .modal-table_name{
 color: #8C8C8C;
-padding-right: 85px;
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  padding-right: 40px;} 
+@media screen and (min-width: 1024px) {
+  padding-right: 85px;
+}
 }
 .table_vote{
   display: inline-flex;
@@ -45,8 +55,8 @@ padding-right: 85px;
   margin-bottom: 10px;
 }
 .modal_movie_description{
-  margin-left:30px;
-  width: 396px;
+  margin-left: 30px;
+  width: auto;
 }
 .modal_description-filme{
 font-weight: 500;
@@ -64,7 +74,6 @@ margin-bottom: 20px;
   font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  width: 146px;
   height: 44px;
   padding-right: 8px;
   padding-left: 8px;
@@ -72,6 +81,16 @@ margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #000;
   background-color: inherit;
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  width: 113px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  width: 125px;
+}
+@media screen and (min-width: 1024px) {
+  width: 146px;
+}
 
   &:hover,
   &:focus{
@@ -86,3 +105,6 @@ margin-bottom: 20px;
 .modal_btn:first-child{
   margin-right: 15px;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {}
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
+@media screen and (min-width: 1024px) {}
