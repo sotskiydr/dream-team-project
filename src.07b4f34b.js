@@ -21,4 +21,4 @@ module.exports={genres:[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,na
 },{"./render-gallery":"x2zJ","./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main");
 },{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-team-project/src.153455f7.js.map
+//# sourceMappingURL=/dream-team-project/src.07b4f34b.js.map
