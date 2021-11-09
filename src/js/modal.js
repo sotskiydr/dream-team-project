@@ -21,11 +21,19 @@ function open(e) {
   modalBackdrop.classList.remove('is-hidden');
   renderModal(cardId,dataImg);
   closeBtn.addEventListener('click', close);
+  
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       close()
     }
   });
+//    modalBackdrop.addEventListener('click', (e)=>{console.log(e.currentTarget)})
+//   modalBackdrop.addEventListener('click', (e)=>{
+//     const modalWindow = document.querySelector('modal_window')
+//   if(!e.target === modalWindow){
+//   }close()
+//  })
+  
 }
 
 function close() {
