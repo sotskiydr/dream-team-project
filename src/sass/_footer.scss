@@ -72,14 +72,12 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-
-  body.show-team & {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
-  }
 }
-
+body.show-team .team {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
 // ========FOOTER-MODAL===========
 
 .team__modal {
@@ -95,6 +93,13 @@
   border-radius: 4px;
   text-align: center;
   background-color: khaki;
+
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
+}
+
+body.show-team .team__modal {
+  transform: scale(1);
 }
 
 .team__btn {
