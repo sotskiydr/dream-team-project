@@ -2,10 +2,14 @@
             <li class="gallery__item">
                 <img class="gallery__img" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt={{title}} />
                 <div class="gallery__description">
+                    {{#if title}}
                     <p class="gallery__title">{{title}}</p>
+                    {{else if name}}
+                    <p class="gallery__title">{{title}}</p>
+                    {{/if}}
                     <ul class='gallery__description-list'>{{#each genre_ids}}
                       <li class='gallery__description-item'>{{name}}</li>{{/each}}
-                      <li>&nbsp;| {{release_date}}</ul>
+                      <li>&nbsp;| {{#if release_date}} {{release_date}} {{else if first_air_date}} {{first_air_date}}{{/if}}</ul>
                 </div>
             </li>
 {{/each}}
