@@ -54,3 +54,61 @@
     margin-top: 2px;
   }
 }
+
+// ===========TEAM===========
+
+.team {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-y: scroll;
+  z-index: 3;
+  background-color: azure;
+
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+
+  body.show-team & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+  }
+}
+
+// ========FOOTER-MODAL===========
+
+.team__modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 50%;
+  width: 100%;
+  padding: 40px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: khaki;
+}
+
+.team__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  color: #f7f7f7;
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.team__eye {
+  width: 30px;
+  height: 30px;
+}
