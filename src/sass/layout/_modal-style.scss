@@ -17,7 +17,7 @@ table td {
   margin-bottom: 20px;
   font-weight: 500;
  
-  @media screen and (min-width: 320px) and (max-width: 1023px) {
+@media screen and (min-width: 320px) and (max-width: 1023px) {
   height: 21px;
   font-size: 20px;
   line-height: 23px;
@@ -70,7 +70,6 @@ margin-bottom: 20px;
   cursor: pointer;
 }
 .modal_btn{
-  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
@@ -83,7 +82,7 @@ margin-bottom: 20px;
   background-color: inherit;
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  width: 113px;
+  width: 112px;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   width: 125px;
