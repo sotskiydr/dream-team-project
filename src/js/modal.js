@@ -9,7 +9,6 @@ import API from '../js/api/API';
 
 const fetchData = new API();
 
-
 galleryPosterSetModal.addEventListener('click', open);
 
 function open(e) {
@@ -20,21 +19,26 @@ function open(e) {
   }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(cardId,dataImg);
-  closeBtn.addEventListener('click', close);
   
+  closeBtn.addEventListener('click', close);
+  //refs.modalCloseOverlay.addEventListener('click', modalClose);
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       close()
     }
   });
-//    modalBackdrop.addEventListener('click', (e)=>{console.log(e.currentTarget)})
-//   modalBackdrop.addEventListener('click', (e)=>{
-//     const modalWindow = document.querySelector('modal_window')
-//   if(!e.target === modalWindow){
-//   }close()
-//  })
+  
+   
+  
   
 }
+modalBackdrop.addEventListener('click', ()=>{
+  //const modalWindow = document.querySelector("modal_window")
+  
+ 
+   
+ close()
+})
 
 function close() {
   modalBackdrop.classList.add('is-hidden');
