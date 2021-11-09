@@ -20,8 +20,8 @@ async function onSearchSubmit(e) {
   try {
     const data = await fetchDataByQuery.getQueryMovie(inputQuery.value);
     if (typeof data.results === 'undefined' || data.results.length <1) {
-      renderGallery();
       errorMsg.innerHTML = "Search result not successful. Enter the correct movie name and try again";
+      return;
     }
     onCutDate(data);
     onToggleGenresData(data, genresData);
