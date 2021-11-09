@@ -19,8 +19,8 @@ module.exports={genres:[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,na
 },{"../js/api/API":"eByr","../templates/main-galleru.hbs":"Z1JL","./refs":"VyiV","./data/genresData.json":"nWYo"}],"GxH7":[function(require,module,exports) {
 "use strict";var e=t(require("./render-gallery")),r=t(require("./refs"));function t(e){return e&&e.__esModule?e:{default:e}}const{logoEl:l,homeLink:d}=r.default;(0,e.default)(),l.addEventListener("click",e.default),d.addEventListener("click",e.default);
 },{"./render-gallery":"x2zJ","./refs":"VyiV"}],"o8lo":[function(require,module,exports) {
-"use strict";var e=n(require("../js/api/API"));function n(e){return e&&e.__esModule?e:{default:e}}const t=new e.default;t.getTrandingMovie().then(e=>console.log(e));
+"use strict";var e=n(require("../js/api/API"));function n(e){return e&&e.__esModule?e:{default:e}}let o=document.querySelectorAll("#js-pagination li"),t=5;for(let l of o)l.addEventListener("click",function(){(new e.default).getTrandingMovie().then(e=>{console.log(e);const n=e.slice(0,6);console.log(n);let o=+this.innerHTML;console.log(o)})});
 },{"../js/api/API":"eByr"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main"),require("./js/pagination");
 },{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7","./js/pagination":"o8lo"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-team-project/src.0dc3e5d8.js.map
+//# sourceMappingURL=/dream-team-project/src.949b7d1a.js.map
