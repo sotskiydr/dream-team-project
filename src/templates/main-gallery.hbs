@@ -1,0 +1,15 @@
+{{#each results}}
+            <li class="gallery__item" id={{id}}>
+                <img class="gallery__img modal" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt={{title}} />
+                <div class="gallery__description modal">
+                    {{#if title}}
+                    <p class="gallery__title modal">{{title}}</p>
+                    {{else if name}}
+                    <p class="gallery__title modal">{{title}}</p>
+                    {{/if}}
+                    <ul class='gallery__description-list modal'>{{#each genre_ids}}
+                      <li class='gallery__description-item modal'>{{name}}</li>{{/each}}
+                      <li>&nbsp;| {{#if release_date}} {{release_date}} {{else if first_air_date}} {{first_air_date}}{{/if}}</ul>
+                </div>
+            </li>
+{{/each}}
