@@ -67,6 +67,11 @@
     height: 12px;
     fill: $additionalColor;
   }
+
+  &__search-btn-icon:hover,
+  &__search_btn:focus &__search-btn-icon {
+    fill: $accentColor;
+  }
 }
 
 .logo {
@@ -82,27 +87,24 @@
     display: none;
   }
 
-  &__icon{
+  &__icon {
     fill: $logoIconColor;
   }
-}
-
-.header__search-btn-icon:hover {
-fill: $accentColor;
 }
 
 .site-nav__link {
   position: relative;
 }
 
-.site-nav__link:hover::after, .site-nav__link:focus::after {
+.site-nav__link:hover::after,
+.site-nav__link:focus::after {
   opacity: 1;
 }
 
 .site-nav__link::after {
   opacity: 0;
-  content: "";
-  transition: opacity  $transitionDuration $transitionAnim;
+  content: '';
+  transition: opacity $transitionDuration $transitionAnim;
   position: absolute;
   left: 0;
   top: 0;
@@ -111,7 +113,6 @@ fill: $accentColor;
   background-color: $accentColor;
   margin-top: 15px;
 }
-
 
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
