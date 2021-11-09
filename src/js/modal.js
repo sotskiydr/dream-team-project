@@ -1,15 +1,17 @@
+const refs = {
+  'galleryPosterSetModal': document.querySelector('.js-gallery'),
+  'closeBtn': document.querySelector('.modal__button_close'),
+  'modalBackdrop': document.querySelector('.modal_backdrop'),
+  'galleryBox': document.querySelector('.modal-markup')
+}
+
 import genresData from './data/genresData.json';
-const galleryPosterSetModal = document.querySelector('.js-gallery');
-const closeBtn = document.querySelector('.modal__button_close');
-const modalBackdrop = document.querySelector('.modal_backdrop');
-const galleryBox = document.querySelector('.modal-markup');
 import { onCutDate ,addModalData } from './components/newData';
 import modalMarkup from '../templates/modal.hbs';
 import API from '../js/api/API';
-
 const fetchData = new API();
 
-galleryPosterSetModal.addEventListener('click', open);
+refs.galleryPosterSetModal.addEventListener('click', open);
 
 function open(e) {
   const cardId = e.target.parentNode.id;
@@ -17,19 +19,19 @@ function open(e) {
   if (!e.target.classList.contains('modal')) {
     return;
   }
-  modalBackdrop.classList.remove('is-hidden');
+  refs.modalBackdrop.classList.remove('is-hidden');
   renderModal(cardId,dataImg);
   onCloseModalWindow();
 }
 
 function onCloseModalWindow(){
-  closeBtn.addEventListener('click', close);
+  refs.closeBtn.addEventListener('click', close);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       close()
     }
   });
-  modalBackdrop.addEventListener('click' , (e) => {
+  refs.modalBackdrop.addEventListener('click' , (e) => {
     if(e.target.classList.contains('modal_backdrop')){
       close();
     }
@@ -37,8 +39,8 @@ function onCloseModalWindow(){
 }
 
 function close() {
-  modalBackdrop.classList.add('is-hidden');
-  galleryBox.innerHTML = '';
+  refs.modalBackdrop.classList.add('is-hidden');
+  refs.galleryBox.innerHTML = '';
 }
 
 async function renderModal(cardId,dataImg) {
@@ -48,7 +50,7 @@ async function renderModal(cardId,dataImg) {
     addModalData(data, genresData,dataImg);
     data.img = dataImg;
     const markup = modalMarkup(data);
-    galleryBox.insertAdjacentHTML('beforeend', markup);
+    refs.galleryBox.insertAdjacentHTML('beforeend', markup);
   } catch (err) {
     console.log('error');
   }
