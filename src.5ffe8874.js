@@ -20,7 +20,9 @@ module.exports={genres:[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,na
 "use strict";var e=t(require("./render-gallery")),r=t(require("./refs"));function t(e){return e&&e.__esModule?e:{default:e}}const{logoEl:l,homeLink:d}=r.default;(0,e.default)(),l.addEventListener("click",e.default),d.addEventListener("click",e.default);
 },{"./render-gallery":"x2zJ","./refs":"VyiV"}],"o8lo":[function(require,module,exports) {
 "use strict";var e=n(require("../js/api/API"));function n(e){return e&&e.__esModule?e:{default:e}}let o=document.querySelectorAll("#js-pagination li"),t=5;for(let l of o)l.addEventListener("click",function(){(new e.default).getTrandingMovie().then(e=>{console.log(e);const n=e.slice(0,6);console.log(n);let o=+this.innerHTML;console.log(o)})});
-},{"../js/api/API":"eByr"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main"),require("./js/pagination");
-},{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7","./js/pagination":"o8lo"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-team-project/src.d2773474.js.map
+},{"../js/api/API":"eByr"}],"RSqK":[function(require,module,exports) {
+const e=document.querySelector(".js-gallery"),d=document.querySelector(".modal__button_close"),t=document.querySelector(".modal_backdrop");function c(e){e.currentTarget.classList,t.classList.remove("is-hidden")}function s(){t.classList.add("is-hidden")}e.addEventListener("click",c),d.addEventListener("click",s),document.addEventListener("keydown",e=>{"Escape"===e.key&&t.classList.add("is-hidden")});
+},{}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main"),require("./js/pagination"),require("./js/modal");
+},{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7","./js/pagination":"o8lo","./js/modal":"RSqK"}]},{},["Focm"], null)
+//# sourceMappingURL=/dream-team-project/src.5ffe8874.js.map
