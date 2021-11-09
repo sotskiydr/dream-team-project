@@ -1,32 +1,31 @@
-{{#each results}}
-<img class="movie_modal_img" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt={{title}}>
-        <div class="modal_movie_description">
-            <div class="modal-table">
-            <table class="moda_table-list">
-            <h2 class="movie_name">
-                {{title}}
-            </h2>
-            <tr>
-                <td class="modal-table_name">Vote / Votes</td>
-                <td><span class="table_vote">{{vote_average}}</span> / {{vote_count}}</td>
-            </tr>
-            <tr>
-                <td class="modal-table_name">Popularity</td>
-                <td>{{popularity}}</td>
-            </tr>
-            <tr>
-                <td class="modal-table_name">Original Title</td>
-                <td>{{original_title}}</td>
-            <tr>
-                <td class="modal-table_name">Genre</td>
-                <td>{{genres}}</td>
-            </tr>
-            </div>
-            <p class="about">about</p>
-            <P class="modal_description-filme">{{overview}}</P>
-            <div class="modal_buttnons">
-                <button class="modal_btn modal_btn_wotched" type="button">add to Watched</button>
-                <button class="modal_btn modal_btn_queue" type="button">add to queue</button>
-            </div>
-        </div>   
-{{/each}}
+<img class="movie_modal_img" src=https://www.themoviedb.org/t/p/w500{{backdrop_path}} alt={{title}}>
+  <div class="modal_movie_description">
+    <div class="modal-table">
+      <table class="moda_table-list">
+        <h2 class="movie_name">
+          {{title}}
+        </h2>
+        <tr>
+          <td class="modal-table_name">Vote / Votes</td>
+          <td><span class="table_vote">{{vote_average}}</span> / {{vote_count}}</td>
+        </tr>
+        <tr>
+          <td class="modal-table_name">Popularity</td>
+          <td>{{popularity}}</td>
+        </tr>
+        <tr>
+          <td class="modal-table_name">Original Title</td>
+          <td>{{original_title}}</td>
+        <tr>
+          <td class="modal-table_name">Genre</td>
+        <td><ul>{{#each genres}}<li>{{name}}</li>{{/each}}</ul></td>
+        </tr>
+      </table>
+    </div>
+    <p class="about">about</p>
+    <P class="modal_description-filme">{{overview}}</P>
+    <div class="modal_buttnons">
+      <button class="modal_btn modal_btn_wotched" type="button">add to Watched</button>
+      <button class="modal_btn modal_btn_queue" type="button">add to queue</button>
+    </div>
+  </div>
