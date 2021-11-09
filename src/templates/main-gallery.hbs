@@ -1,5 +1,5 @@
 {{#each results}}
-            <li class="gallery__item" id={{id}}>
+            <li class="gallery__item" id={{id}} data-img={{poster_path}}>
                 <img class="gallery__img modal" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt={{title}} />
                 <div class="gallery__description modal">
                     {{#if title}}

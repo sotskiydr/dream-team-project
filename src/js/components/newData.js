@@ -18,7 +18,17 @@ function onToggleGenresData (object,genres){
   return data
 }
 
+function addModalData(object,genres){
+  const data = object.results;
+  const genresData = genres.genres;
+  for (const key in data) {
+    data[key].genre_ids = data[key].genre_ids.map(id => genresData.filter(element => element.id === id)).flat();
+  }
+  return data
+}
+
 export {
   onCutDate,
-  onToggleGenresData
+  onToggleGenresData,
+  addModalData
 }
