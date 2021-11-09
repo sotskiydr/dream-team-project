@@ -19,7 +19,6 @@ async function onSearchSubmit(e) {
   galleryList.innerHTML = '';
   try {
     const data = await fetchDataByQuery.getQueryMovie(inputQuery.value);
-    console.log(data)
     if (typeof data.results === 'undefined' || data.results.length <1) {
       renderGallery();
       errorMsg.innerHTML = "Search result not successful. Enter the correct movie name and try again";
