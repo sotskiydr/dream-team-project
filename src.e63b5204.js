@@ -29,4 +29,4 @@ module.exports={genres:[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,na
 },{"./data/genresData.json":"nWYo","./components/newData":"SlP3","../templates/modal.hbs":"a5Hl","../js/api/API":"eByr"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main"),require("./js/pagination"),require("./js/modal");
 },{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7","./js/pagination":"o8lo","./js/modal":"RSqK"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-team-project/src.fc1fa6ad.js.map
+//# sourceMappingURL=/dream-team-project/src.e63b5204.js.map
