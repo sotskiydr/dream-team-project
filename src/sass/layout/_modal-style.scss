@@ -1,0 +1,110 @@
+table {
+  border-collapse: collapse;
+  display: flex;
+}
+table th,
+table td {
+  padding: 10px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+.movie_name{
+  text-transform: uppercase;
+  width: auto;
+  margin-bottom: 20px;
+  font-weight: 500;
+ 
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+  height: 21px;
+  font-size: 20px;
+  line-height: 23px;
+  }
+@media screen and (min-width: 1024px) {
+  height: 31px;
+  line-height: 35px;
+}
+}
+.moda_table-list{
+  margin-bottom: 20px;
+}
+.modal-table_name{
+color: #8C8C8C;
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  padding-right: 40px;} 
+@media screen and (min-width: 1024px) {
+  padding-right: 85px;
+}
+}
+.table_vote{
+  display: inline-flex;
+  justify-content: center;
+  background: #FF6B01;
+  border-radius: 5px;
+  width: 36px;
+  height: 16px;
+}
+.about{
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.modal_movie_description{
+  margin-left: 30px;
+  width: auto;
+}
+.modal_description-filme{
+font-weight: 500;
+font-size: 12px;
+line-height: 20px;
+margin-bottom: 20px;
+}
+.modal_buttnons{
+  display: inline-flex;
+  margin-left: auto;
+  cursor: pointer;
+}
+.modal_btn{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  height: 44px;
+  padding-right: 8px;
+  padding-left: 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: inherit;
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  width: 113px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  width: 125px;
+}
+@media screen and (min-width: 1024px) {
+  width: 146px;
+}
+
+  &:hover,
+  &:focus{
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    background-color: #FF6B01;
+    color: #ffffff;
+    border:none;
+  }
+}
+.modal_btn:first-child{
+  margin-right: 15px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {}
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
+@media screen and (min-width: 1024px) {}
