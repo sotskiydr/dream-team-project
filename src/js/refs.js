@@ -2,4 +2,6 @@ export default {
     logoEl: document.querySelector('.js-logo'),
     homeLink: document.querySelector('.js-home'),
     galleryList: document.querySelector('.js-gallery'),
+    inputQuery: document.querySelector('.header__input'),
+    inputForm: document.querySelector('.header__input_wrapper'),
 }
