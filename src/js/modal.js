@@ -3,7 +3,7 @@ const galleryPosterSetModal = document.querySelector('.js-gallery');
 const closeBtn = document.querySelector('.modal__button_close');
 const modalBackdrop = document.querySelector('.modal_backdrop');
 const galleryBox = document.querySelector('.modal-markup');
-import { onCutDate, onToggleGenresData ,addModalData } from './components/newData';
+import { onCutDate ,addModalData } from './components/newData';
 import modalMarkup from '../templates/modal.hbs';
 import API from '../js/api/API';
 
@@ -19,26 +19,22 @@ function open(e) {
   }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(cardId,dataImg);
-  
+  onCloseModalWindow();
+}
+
+function onCloseModalWindow(){
   closeBtn.addEventListener('click', close);
-  //refs.modalCloseOverlay.addEventListener('click', modalClose);
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
       close()
     }
   });
-  
-   
-  
-  
+  modalBackdrop.addEventListener('click' , (e) => {
+    if(e.target.classList.contains('modal_backdrop')){
+      close();
+    }
+  })
 }
-modalBackdrop.addEventListener('click', ()=>{
-  //const modalWindow = document.querySelector("modal_window")
-  
- 
-   
- close()
-})
 
 function close() {
   modalBackdrop.classList.add('is-hidden');
@@ -51,9 +47,7 @@ async function renderModal(cardId,dataImg) {
     onCutDate(data);
     addModalData(data, genresData,dataImg);
     data.img = dataImg;
-    // console.log(data);
     const markup = modalMarkup(data);
-    // console.log(markup);
     galleryBox.insertAdjacentHTML('beforeend', markup);
   } catch (err) {
     console.log('error');
