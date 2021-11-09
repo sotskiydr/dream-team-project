@@ -4,4 +4,5 @@ export default {
     galleryList: document.querySelector('.js-gallery'),
     inputQuery: document.querySelector('.header__input'),
     inputForm: document.querySelector('.header__input_wrapper'),
+    errorMsg: document.querySelector('.header__input_msg_error'),
 }

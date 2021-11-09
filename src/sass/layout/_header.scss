@@ -75,6 +75,14 @@
     fill: $accentColor;
     transition: fill $transitionDuration $transitionAnim;
   }
+
+  &__input_msg_error {
+    font-size: 14px;
+    font-weight: 400;
+    color: $errorMessageColor;
+    text-align: center;
+    margin-top: 22px;
+  }
 }
 
 .logo {
