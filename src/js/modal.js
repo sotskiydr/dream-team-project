@@ -11,14 +11,6 @@ const fetchData = new API();
 
 
 galleryPosterSetModal.addEventListener('click', open);
-closeBtn.addEventListener('click', close);
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    close()
-  }
-});
-
-//modalBackdrop.addEventListener('click', close);    //не работает на оверфлок закрытие
 
 function open(e) {
   const cardId = e.target.parentNode.id;
@@ -27,6 +19,12 @@ function open(e) {
   }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(cardId);
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      close()
+    }
+  });
 }
 
 function close() {
