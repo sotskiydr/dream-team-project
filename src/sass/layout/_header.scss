@@ -60,17 +60,20 @@
     background: transparent;
     border: 0;
     padding: 0;
+    cursor: pointer;
   }
 
   &__search-btn-icon {
     width: 12px;
     height: 12px;
     fill: $additionalColor;
+    transition: fill $transitionDuration $transitionAnim;
   }
 
   &__search-btn-icon:hover,
   &__search_btn:focus &__search-btn-icon {
     fill: $accentColor;
+    transition: fill $transitionDuration $transitionAnim;
   }
 }
 
