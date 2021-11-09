@@ -7,9 +7,13 @@
                     {{else if name}}
                     <p class="gallery__title">{{title}}</p>
                     {{/if}}
-                    <ul class='gallery__description-list'>{{#each genre_ids}}
-                      <li class='gallery__description-item'>{{name}}</li>{{/each}}
-                      <li>&nbsp;| {{#if release_date}} {{release_date}} {{else if first_air_date}} {{first_air_date}}{{/if}}</ul>
+                    <div class='gallery__description-text'>
+                        <ul class='gallery__description-list'>{{#each genre_ids}}
+                            <li class='gallery__description-item'>{{name}}</li>{{/each}}&nbsp;|
+                        </ul>
+                        <div>&nbsp;{{#if release_date}} {{release_date}} {{else if first_air_date}} {{first_air_date}}{{/if}}</div>
+                    </div>
+                    
                 </div>
             </li>
 {{/each}}
