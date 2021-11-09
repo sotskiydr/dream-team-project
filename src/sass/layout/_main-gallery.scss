@@ -34,16 +34,15 @@
   line-height: 1.17;
 }
 
-.gallery__description-list{
-  display:flex;
+.gallery__description-list {
+  display: flex;
   color: $accentColor;
   font-size: 12px;
   line-height: 1.33;
-  .gallery__description-item:not(:first-child):before{
+  .gallery__description-item:not(:first-child):before {
     content: ', ';
   }
 }
-
 
 @include device-size(tablet) {
   .gallery {
