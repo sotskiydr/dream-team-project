@@ -1,10 +1,14 @@
 //Обрезаем дату ,чтобы было видно только год.
-function onCutDate (object){
+function onCutDate(object) {
   const date = object.results;
   for (const key in date) {
-    date[key].release_date = date[key].release_date.slice(0,4);
+    if (date[key].hasOwnProperty('release_date')) {
+      date[key].release_date = date[key].release_date.slice(0, 4);
+    } else {
+      date[key].release_date = '';
+    }
   }
-  return date
+  return date;
 }
 
 //Преобразуем жарнры из id в name
