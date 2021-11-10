@@ -1,9 +1,9 @@
 // mobile
 .header {
-  background-color: rgb(25, 25, 25);
+  background-color: $secondColor;
   height: 230px;
-  color: #ffffff;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+  color: $additionalColor;
+  background-image: linear-gradient($shadowColor, $shadowColor),
     url('../images/hero/hero_mobile@1x.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,15 +40,15 @@
     width: 275px;
     height: 20px;
     padding-right: 25px;
-    color: #ffffff;
+    color: $additionalColor;
     background-color: transparent;
     outline: 0;
     border-width: 0 0 0.5px;
-    border-color: #ffffff;
+    border-color: $additionalColor;
   }
 
   &__input::placeholder {
-    color: #ffffff;
+    color: $additionalColor;
     font-weight: 400;
     font-size: 14px;
   }
@@ -60,11 +60,28 @@
     background: transparent;
     border: 0;
     padding: 0;
+    cursor: pointer;
   }
 
   &__search-btn-icon {
     width: 12px;
     height: 12px;
+    fill: $additionalColor;
+    transition: fill $transitionDuration $transitionAnim;
+  }
+
+  &__search-btn-icon:hover,
+  &__search_btn:focus &__search-btn-icon {
+    fill: $accentColor;
+    transition: fill $transitionDuration $transitionAnim;
+  }
+
+  &__input_msg_error {
+    font-size: 14px;
+    font-weight: 400;
+    color: $errorMessageColor;
+    text-align: center;
+    margin-top: 22px;
   }
 }
 
@@ -80,13 +97,39 @@
     font-size: 30px;
     display: none;
   }
+
+  &__icon {
+    fill: $logoIconColor;
+  }
+}
+
+.site-nav__link {
+  position: relative;
+}
+
+.site-nav__link:hover::after,
+.site-nav__link:focus::after {
+  opacity: 1;
+}
+
+.site-nav__link::after {
+  opacity: 0;
+  content: '';
+  transition: opacity $transitionDuration $transitionAnim;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background-color: $accentColor;
+  margin-top: 15px;
 }
 
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
   (min-resolution: 2dppx) and (min-width: 320px) {
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    background-image: linear-gradient($shadowColor, $shadowColor),
       url('../images/hero/hero_mobile@2x.jpg');
   }
 }
@@ -94,7 +137,7 @@
 // tablet
 @media (min-width: 768px) {
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    background-image: linear-gradient($shadowColor, $shadowColor),
       url('../images/hero/hero_tablet@1x.jpg');
 
     &__input {
@@ -110,7 +153,7 @@
   (min-resolution: 192dpi) and (min-width: 768px),
   (min-resolution: 2dppx) and (min-width: 768px) {
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    background-image: linear-gradient($shadowColor, $shadowColor),
       url('../images/hero/hero_tablet@2x.jpg');
   }
 }
@@ -118,7 +161,7 @@
 // desktop
 @media (min-width: 1024px) {
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    background-image: linear-gradient($shadowColor, $shadowColor),
       url('../images/hero/hero_desktop@1x.jpg');
   }
 }
@@ -127,7 +170,7 @@
   (min-resolution: 192dpi) and (min-width: 1024px),
   (min-resolution: 2dppx) and (min-width: 1024px) {
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    background-image: linear-gradient($shadowColor, $shadowColor),
       url('../images/hero/hero_desktop@2x.jpg');
   }
 }

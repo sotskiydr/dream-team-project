@@ -15,22 +15,23 @@
 
       <ul class="header__nav_links">
         <li class="header__nav_list_item">
-          <a href="#" class="header__home_link js-home">home</a>
+          <a href="./index.html" class="header__home_link js-home site-nav__link">home</a>
         </li>
         <li class="header__nav_list_item">
-          <a href="#" class="header__lib_link js-lib">my library</a>
+          <a href="#" class="header__lib_link js-lib site-nav__link">my library</a>
         </li>
       </ul>
     </nav>
 
-    <div class="header__input_wrapper">
+    <form class="header__input_wrapper">
       <input type="text" name="input" class="header__input" placeholder="Поиск фильмов" />
       <button class="header__search_btn">
         <svg class="header__search-btn-icon">
           <use href="../src/images/sprite.svg#icon-search"></use>
         </svg>
       </button>
-    </div>
+    </form>
+    <div class="header__input_msg_error"></div>
   </div>
 </header>
 

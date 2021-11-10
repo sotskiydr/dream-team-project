@@ -1,11 +1,136 @@
-.pagination {
-    display: flex;
-    justify-content: space-around;
+// .pagination {
+//     display: flex;
+//     justify-content: space-around;
     
-};
-.pagination__button {
-    width: 40px;
+// };
+// .pagination__button {
+//     width: 40px;
+//     height: 40px;
+//     border-radius: 5px;
+//     color: tomato;
+// }
+
+// $border-color: #3D315B;
+// $background-color: #266DD3;
+// $list-background-color: #444B6E;
+// $active-list-background-color: #9AB87A;
+// $border-radius: 5px;
+
+// * {
+//   font-family: 'Poppins';
+// }
+// body {
+//   background-color: $background-color;
+//   margin: 0;
+// }
+// a:hover {
+//   cursor: pointer;
+// }
+@media screen and (min-width: 320px){
+  #pagination {
+    display: flex;
+  //   height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .page-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  .page-item,
+  .no,
+  .active {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      color: $mainColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  padding: 13px;
+      //   border: 2px solid tomato;
+        border-right: 0;
+        :hover {
+          background-color: $accentColor;
+          color: $additionalColor ;
+          cursor: pointer;
+        }
+  }
+  .out-of-range{
+    display: none;
+    // width: 40px;
+    // height: 40px;
+    // border-radius: 5px;
+    // color: $mainColor;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // :hover {
+    //   background-color: $accentColor;
+    //   color: $additionalColor ;
+    //   cursor: pointer;
+    // }
+  }
+}
+@media screen and (min-width: 768px){
+  .out-of-range{
+        width: 40px;
     height: 40px;
     border-radius: 5px;
-    color: tomato;
+    color: $mainColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    :hover {
+      background-color: $accentColor;
+      color: $additionalColor ;
+      cursor: pointer;
+    }
+  }
 }
+
+
+//   li {
+//     // width: 40px;
+//     // height: 40px;
+//     // border-radius: 5px;
+//     color: $mainColor;
+//     display: flex;
+//     a {
+//     //   background-color: #444B6E;
+// font-weight: 500;
+// font-size: 12px;
+// line-height: 1.33;
+// padding: 13px;
+//     //   border: 2px solid tomato;
+//       border-right: 0;
+//     }
+//   }
+  // li.previous,
+  // li.next {
+  //   animation: fadein .5s;
+  // }
+//   li.active a {
+//     // background-color: $active-list-background-color;
+//   }
+//   li:first-child a {
+//     // border-radius: $border-radius 0 0 $border-radius;
+//   }
+//   li:last-child a {
+//     // border-radius: 0 $border-radius $border-radius 0;
+//     // border-right: 2px solid $border-color;
+//   }
+// }
+
+// When I feel motivated to get this working
+// @keyframes fadein {
+//   from {opacity: 0;}
+//   to {opacity: 1;}
+// }
