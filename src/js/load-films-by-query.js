@@ -12,19 +12,17 @@ inputForm.addEventListener('submit', onSearchSubmit);
 
 async function onSearchSubmit(e) {
   e.preventDefault();
+  galleryList.innerHTML = '';
   errorMsg.innerHTML = '';
   if (inputQuery.value === '') {
-    galleryList.innerHTML = '';
     onLoadPopular();
     return;
   }
-  galleryList.innerHTML = '';
   try {
     const data = await fetchDataByQuery.getQueryMovie(inputQuery.value);
     if (typeof data.results === 'undefined' || data.results.length < 1) {
       errorMsg.innerHTML =
         'Search result not successful. Enter the correct movie name and try again';
-      galleryList.innerHTML = '';
       onLoadPopular();
       return;
     }
