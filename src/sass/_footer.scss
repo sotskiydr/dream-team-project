@@ -35,71 +35,69 @@
     margin-right: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-}
+  // ===========TEAM===========
 
-@media screen and (min-width: 768px) {
-  .footer__section {
+  .team {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
+    overflow-y: scroll;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+
+    body.show-team & {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
   }
-  .footer__text-conteiner {
-    display: flex;
-    flex-direction: inherit;
-    font-size: 16px;
-    padding-top: 30px;
-    padding-bottom: 29px;
+  // body.show-team .team {
+  //   opacity: 1;
+  //   visibility: visible;
+  //   pointer-events: auto;
+  // }
+
+  // ========FOOTER-MODAL===========
+
+  .team__modal {
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: 0;
+    // background-color: white;
+    // z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50%hw;
+    width: 320px;
+    width: 100%;
+
+    padding: 40px;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    // min-height: 320px;
+    background-color: #f7f7f7;
+
+    // transform: scale(1.1);
+    // transition: transform 200ms ease-in-out;
   }
 
-  .footer__text-first {
-    margin-bottom: 0;
-    margin-top: 2px;
-  }
-}
-
-// ===========TEAM===========
-
-.team {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  overflow-y: scroll;
-  z-index: 3;
-  background-color: azure;
-
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-}
-body.show-team .team {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: initial;
-}
-// ========FOOTER-MODAL===========
-
-.team__modal {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 50%;
-  width: 100%;
-  padding: 40px;
-  display: inline-block;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 4px;
-  text-align: center;
-  background-color: khaki;
-
-  transform: scale(1.1);
-  transition: transform 200ms ease-in-out;
-}
-
-body.show-team .team__modal {
-  transform: scale(1);
+  // body.show-team .team__modal {
+  //   transform: scale(1);
+  // }
 }
 
 .team__btn {
@@ -116,4 +114,192 @@ body.show-team .team__modal {
 .team__eye {
   width: 30px;
   height: 30px;
+  filter: drop-shadow (0 0 7 px #ff6b08);
+}
+
+.team__eye:hover,
+.team__eye:focus {
+  filter: drop-shadow(0 0 4px black);
+}
+
+// ===========HEROES STYLE===========
+
+.team__herous {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+  outline: 3px solid red;
+}
+
+.hero {
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  outline: 3px solid green;
+}
+
+.team__title {
+  display: inline-block;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #ff6b08;
+  text-shadow: 4px 4px 2px rgba(129, 188, 204, 1);
+}
+.hero__link {
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: -18px 0 20px -20px #333, 18px 0 20px -20px #333;
+}
+.hero__image {
+  margin: 0;
+  // width: 150%;
+  width: 220px;
+  height: 295px;
+  // margin-left: -25px;
+  // justify-content: space-between;
+  // align-content: space-around;
+  // flex-wrap: nowrap;
+  // flex-direction: column;
+  // align-items: center;
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 25px;
+}
+
+.hero__name {
+  margin-top: 25px;
+  color: #545454;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.hero__position {
+  margin-top: 10px;
+  color: #777;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__section {
+    display: flex;
+  }
+  .team__modal {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: 768px;
+    width: 100%;
+  }
+
+  .footer__text-conteiner {
+    display: flex;
+    flex-direction: inherit;
+    font-size: 16px;
+    padding-top: 30px;
+    padding-bottom: 29px;
+  }
+
+  .footer__text-first {
+    margin-bottom: 0;
+    margin-top: 2px;
+  }
+
+  .hero {
+    width: calc(100% / 2 - 10px);
+  }
+
+  .hero__name {
+    font-size: 16px;
+  }
+
+  .hero__position {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .team__modal {
+    max-width: 1024px;
+    width: 100%;
+    // height: 100%;
+  }
+
+  .hero {
+    width: calc(100% / 3 - 10px);
+  }
+
+  .hero__image:focus,
+  .hero__image:hover {
+    -moz-transform: translate(3px, 3px) skew(3deg, 2deg);
+    -webkit-transform: translate(3px, 3px) skew(3deg, 2deg);
+    -o-transform: translate(3px, 3px) skew(3deg, 2deg);
+    -ms-transform: translate(3px, 3px) skew(3deg, 2deg);
+    transform: translate(3px, 3px) skew(3deg, 2deg);
+  }
+}
+
+// =============PHOTO-EFFECTS==========
+
+.polaroid {
+  position: relative;
+  width: 220px;
+  height: 295px;
+  margin-top: 10px;
+  outline: 3px solid yellow;
+}
+.polaroid img {
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+  -moz-box-shadow: 3px 3px 3px #777;
+  box-shadow: 3px 3px 3px #777;
+  outline: 3px solid greenyellow;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+}
+
+// =============HEART=======
+
+.heart svg {
+  width: 40px;
+  margin: 40px;
+  overflow: visible;
+}
+
+.heart use {
+  stroke: red;
+  opacity: 0;
+  animation: pulsing 1000ms ease-out infinite;
+}
+
+@keyframes pulsing {
+  from {
+    opacity: 0.5;
+    stroke-width: 0;
+  }
+  to {
+    opacity: 0;
+    stroke-width: 12px;
+  }
+}
+
+.element {
+  animation: pulsing 1000ms ease-out;
 }
