@@ -4,7 +4,7 @@ const fetchDataByQuery = new API();
 import mainGallery from '../templates/main-gallery.hbs';
 import genresData from './data/genresData.json';
 import { onCutDate, onToggleGenresData } from './components/newData';
-import renderGallery from "./render-gallery";
+import { onLoadPopular } from './load-popular-main';
 
 const { galleryList, inputQuery, inputForm, errorMsg } = refs;
 
@@ -12,15 +12,20 @@ inputForm.addEventListener('submit', onSearchSubmit);
 
 async function onSearchSubmit(e) {
   e.preventDefault();
-  errorMsg.innerHTML='';
+  errorMsg.innerHTML = '';
   if (inputQuery.value === '') {
+    galleryList.innerHTML = '';
+    onLoadPopular();
     return;
   }
   galleryList.innerHTML = '';
   try {
     const data = await fetchDataByQuery.getQueryMovie(inputQuery.value);
-    if (typeof data.results === 'undefined' || data.results.length <1) {
-      errorMsg.innerHTML = "Search result not successful. Enter the correct movie name and try again";
+    if (typeof data.results === 'undefined' || data.results.length < 1) {
+      errorMsg.innerHTML =
+        'Search result not successful. Enter the correct movie name and try again';
+      galleryList.innerHTML = '';
+      onLoadPopular();
       return;
     }
     onCutDate(data);
