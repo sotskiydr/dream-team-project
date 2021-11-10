@@ -75,6 +75,7 @@
     // bottom: 0;
     // background-color: white;
     // z-index: 999;
+
     position: absolute;
     left: 0;
     top: 0;
@@ -128,7 +129,6 @@
   display: flex;
   flex-wrap: wrap;
   margin: -5px;
-  outline: 3px solid red;
 }
 
 .hero {
@@ -140,7 +140,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  outline: 3px solid green;
 }
 
 .team__title {
@@ -255,7 +254,6 @@
   width: 220px;
   height: 295px;
   margin-top: 10px;
-  outline: 3px solid yellow;
 }
 .polaroid img {
   border: 10px solid #fff;
@@ -263,7 +261,6 @@
   -webkit-box-shadow: 3px 3px 3px #777;
   -moz-box-shadow: 3px 3px 3px #777;
   box-shadow: 3px 3px 3px #777;
-  outline: 3px solid greenyellow;
 }
 
 .polaroid p {
