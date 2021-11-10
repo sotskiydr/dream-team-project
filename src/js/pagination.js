@@ -1,8 +1,8 @@
-// import API from '../js/api/API';
-// // console.log(API);
+import API from '../js/api/API';
+// console.log(API);
 // // console.log(FetchData.getTrandingMovie.response);
 
-// // fetchData.getDescriptionMovie('321528').then(data => console.log(data));
+// fetchData.getDescriptionMovie('321528').then(data => console.log(data));
 // let items = document.querySelectorAll('#js-pagination li');
 // let notesOnPage = 5;
 // for (let item of items) {
@@ -33,10 +33,11 @@
         
 //     });
 // }
-
-let pages = 25;
-
-document.getElementById('pagination').innerHTML = createPagination(pages, 12);
+// let items = document.querySelectorAll('#pagination')
+// console.log(items);
+let pages = 20;
+let page = 15;
+document.getElementById('pagination').innerHTML = createPagination(pages, page);
 
 function createPagination(pages, page) {
   let str = '<ul class="page-list" >';
@@ -45,7 +46,7 @@ function createPagination(pages, page) {
   let pageCutHigh = page + 1;
   // Show the Previous button only if you are on a page other than the first
   if (page > 1) {
-    str += '<li class="page-item previous no"><a onclick="createPagination(pages, '+(page-1)+')">Previous</a></li>';
+    str += '<li class="page-item previous no"><a onclick="createPagination(pages, '+(page-1)+')">&lsaquo;Prev</a></li>';
   }
   // Show all the pagination elements if there are less than 6 pages total
   if (pages < 6) {
@@ -99,7 +100,7 @@ function createPagination(pages, page) {
   }
   // Show the Next button only if you are on a page other than the last
   if (page < pages) {
-    str += '<li class="page-item next no"><a onclick="createPagination(pages, '+(page+1)+')">Next</a></li>';
+    str += '<li class="page-item next no"><a onclick="createPagination(pages, '+(page+1)+')">Next&rsaquo;</a></li>';
   }
   str += '</ul>';
   // Return the pagination string to be outputted in the pug templates
