@@ -5,3 +5,4 @@ import './js/pagination';
 import './js/modal';
 import './js/load-films-by-query';
 import './js/theme';
+import './js/team';
