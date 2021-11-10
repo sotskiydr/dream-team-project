@@ -81,6 +81,28 @@
   }
 }
 
+.site-nav__link {
+  position: relative;
+}
+
+.site-nav__link:hover::after,
+.site-nav__link:focus::after {
+  opacity: 1;
+}
+
+.site-nav__link::after {
+  opacity: 0;
+  content: '';
+  transition: opacity $transitionDuration $transitionAnim;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background-color: $accentColor;
+  margin-top: 15px;
+}
+
 // tablet
 @media (min-width: 768px) {
   .header {
