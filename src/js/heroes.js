@@ -1,27 +1,32 @@
 import photoFarafonova from "../images/team/farafonova.jpg";
 import photowoman from "../images/team/womenavatar.jpg";
 import photoman from "../images/team/menavatar.jpg";
+import photoVitalyi from "../images/team/vitaliy.jpg";
+import photoDima from "../images/team/dima.jpg";
+import photoEugeniya from "../images/team/eugeniya.jpg";
+import photoNatasha from "../images/team/natasha.jpg";
+import photoAndrii from "../images/team/andrii.jpg"
 
 
 
 export default [
     {
         name: 'Dima',
-        photo: photoman,
+        photo: photoDima,
         position: 'Team Lider',
         linkedin: 'https://www.linkedin.com/',
     },
     
     {
         name: 'Eugenia',
-        photo: photowoman,
+        photo: photoEugeniya,
         position: 'Scrum Master',
         linkedin: 'https://www.linkedin.com/',
     },
     
     {
         name: 'Natalia',
-        photo: photowoman,
+        photo: photoNatasha,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
     },
@@ -35,16 +40,16 @@ export default [
     
     {
         name: 'Andrii',
-        photo: photoman,
+        photo: photoAndrii,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
     },
      
     {
         name: 'Vitaliy',
-        photo: photoman,
+        photo: photoVitalyi,
         position: 'Developer',
-        linkedin: 'https://www.linkedin.com/',
+        linkedin: 'https://www.linkedin.com/in/vitaliy-todorov-2bb56b150/',
     },
        
     {
