@@ -4,7 +4,7 @@ import { renderGallery } from './render-gallery';
 import refs from './refs';
 const { galleryList, logoEl, homeLink } = refs;
 
-async function onLoadPopular() {
+export default async function onLoadPopular() {
   try {
     const data = await fetchData.getTrandingMovie();
     renderGallery(data, galleryList);
@@ -16,5 +16,3 @@ onLoadPopular();
 // подгрузка популярного при клике на лого и home
 logoEl.addEventListener('click', onLoadPopular);
 homeLink.addEventListener('click', onLoadPopular);
-
-export { onLoadPopular };
