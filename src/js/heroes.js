@@ -5,7 +5,8 @@ import photoVitalyi from "../images/team/vitaliy.jpg";
 import photoDima from "../images/team/dima.jpg";
 import photoEugeniya from "../images/team/eugeniya.jpg";
 import photoNatasha from "../images/team/natasha.jpg";
-import photoAndrii from "../images/team/andrii.jpg"
+import photoAndrii from "../images/team/andrii.jpg";
+import photoAleks from "../images/team/aleks.jpg";
 
 
 
@@ -33,7 +34,7 @@ export default [
     
     {
         name: 'Alexandr',
-        photo: photoman,
+        photo: photoAleks,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
     },
