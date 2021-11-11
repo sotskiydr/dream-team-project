@@ -23,6 +23,20 @@
   }
 }
 
+.gallery__img-error {
+  width: 280px;
+  height: 402px;
+  padding: 50px;
+  color: rgb(58, 62, 65);
+  background-color: rgb(250, 250, 244);
+  border-radius: 5px;
+
+  text-align: center;
+
+  font-size: 28px;
+  line-height: 1.8;
+}
+
 .gallery__description {
   margin-top: 10px;
 }

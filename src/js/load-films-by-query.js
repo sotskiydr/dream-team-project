@@ -2,6 +2,7 @@ import refs from './refs';
 import API from '../js/api/API';
 const fetchDataByQuery = new API();
 import mainGallery from '../templates/main-gallery.hbs';
+
 import genresData from './data/genresData.json';
 import { onCutDate, onToggleGenresData } from './components/newData';
 import renderGallery from "./render-gallery";
