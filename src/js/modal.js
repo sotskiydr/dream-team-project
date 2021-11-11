@@ -9,6 +9,7 @@ import genresData from './data/genresData.json';
 import { onCutDate ,addModalData } from './components/newData';
 import modalMarkup from '../templates/modal.hbs';
 import API from '../js/api/API';
+import getID from '../js/add-to-watched'
 const fetchData = new API();
 
 refs.galleryPosterSetModal.addEventListener('click', open);
@@ -20,7 +21,7 @@ function open(e) {
     return;
   }
   refs.modalBackdrop.classList.remove('is-hidden');
-  renderModal(cardId,dataImg);
+  renderModal(cardId, dataImg);
   onCloseModalWindow();
 }
 
@@ -51,7 +52,37 @@ async function renderModal(cardId,dataImg) {
     data.img = dataImg;
     const markup = modalMarkup(data);
     refs.galleryBox.insertAdjacentHTML('beforeend', markup);
+    getID(cardId)
   } catch (err) {
     console.log('error');
   }
 }
+
+
+// ChekLocal
+
+// function chekLocalWatched(dataFilm) {
+//   if (
+//     localStorage.getItem('watched') &&
+//     JSON.parse(localStorage.getItem('watched')).some(el => el.title === dataFilm.title)
+//   ) {
+//     buttonWatchedEl.textContent = 'REMOVE';
+//   } else {
+//     buttonWatchedEl.textContent = 'ADD TO WATCHED';
+//   }
+//   return;
+// }
+
+// function chekLocalQueve(dataFilm) {
+//   if (
+//     localStorage.getItem('queve') &&
+//     JSON.parse(localStorage.getItem('queve')).some(el => el.title === dataFilm.title)
+//   ) {
+//     buttonQueveEl.textContent = 'REMOVE';
+//   } else {
+//     buttonQueveEl.textContent = 'ADD TO QUEVE';
+//   }
+//   return;
+// }
+
+// galleryEl.addEventListener('click', getTitle);
