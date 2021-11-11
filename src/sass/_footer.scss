@@ -66,6 +66,11 @@
   // }
 
   // ========FOOTER-MODAL===========
+  .team__modal,
+  .team__btn {
+    position: absolute;
+    background-color: #f7f7f7;
+  }
 
   .team__modal {
     // position: absolute;
@@ -76,12 +81,13 @@
     // background-color: white;
     // z-index: 999;
 
-    position: absolute;
+    // position: absolute;
     left: 0;
     top: 0;
-    height: 50%hw;
+    // height: 50%hw;
     // width: 320px;
     width: 100%;
+    height: 100%;
 
     // padding: 40px;
     display: inline-block;
@@ -90,7 +96,7 @@
     border-radius: 4px;
     text-align: center;
     // min-height: 320px;
-    background-color: #f7f7f7;
+    // background-color: #f7f7f7;
 
     // transform: scale(1.1);
     // transition: transform 200ms ease-in-out;
@@ -102,20 +108,20 @@
 }
 
 .team__btn {
-  position: absolute;
+  // position: absolute;
   top: 10px;
   right: 10px;
   width: 40px;
   height: 40px;
-  color: #f7f7f7;
+  color: fuchsia;
   border: none;
-  background-color: #f7f7f7;
+  // background-color: #f7f7f7;
 }
 
 .team__eye {
   width: 30px;
   height: 30px;
-  filter: drop-shadow (0 0 7 px #ff6b08);
+  // filter: drop-shadow (0 0 7 px #ff6b08);
 }
 
 .team__eye:hover,
@@ -199,7 +205,7 @@
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
     max-width: 768px;
-    width: 100%;
+    height: 100%;
   }
 
   .footer__text-conteiner {
@@ -231,8 +237,14 @@
 @media screen and (min-width: 1024px) {
   .team__modal {
     max-width: 1024px;
-    width: 100%;
+    height: 100%;
+    // width: 100%;
     // height: 100%;
+  }
+
+  .team__herous {
+    max-width: 1024px;
+    height: 50%;
   }
 
   .hero {
@@ -262,6 +274,8 @@
 
 .polaroid {
   position: relative;
+  // width: 110px;
+  // height: 170px;
   width: 220px;
   height: 295px;
   margin-top: 10px;
