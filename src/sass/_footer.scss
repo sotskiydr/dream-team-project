@@ -59,11 +59,6 @@
       pointer-events: auto;
     }
   }
-  // body.show-team .team {
-  //   opacity: 1;
-  //   visibility: visible;
-  //   pointer-events: auto;
-  // }
 
   // ========FOOTER-MODAL===========
   .team__modal,
@@ -73,55 +68,32 @@
   }
 
   .team__modal {
-    // position: absolute;
-    // left: 0;
-    // right: 0;
-    // top: 0;
-    // bottom: 0;
-    // background-color: white;
-    // z-index: 999;
-
-    // position: absolute;
     left: 0;
     top: 0;
-    // height: 50%hw;
-    // width: 320px;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
 
-    // padding: 40px;
     display: inline-block;
     margin: 0 auto;
     padding: 20px;
     border-radius: 4px;
     text-align: center;
-    // min-height: 320px;
-    // background-color: #f7f7f7;
-
-    // transform: scale(1.1);
-    // transition: transform 200ms ease-in-out;
   }
-
-  // body.show-team .team__modal {
-  //   transform: scale(1);
-  // }
 }
 
 .team__btn {
-  // position: absolute;
   top: 10px;
   right: 10px;
   width: 40px;
   height: 40px;
   color: fuchsia;
   border: none;
-  // background-color: #f7f7f7;
 }
 
 .team__eye {
   width: 30px;
   height: 30px;
-  // filter: drop-shadow (0 0 7 px #ff6b08);
 }
 
 .team__eye:hover,
@@ -164,15 +136,8 @@
 
 .hero__image {
   margin: 0;
-  // width: 150%;
   width: 220px;
   height: 295px;
-  // margin-left: -25px;
-  // justify-content: space-between;
-  // align-content: space-around;
-  // flex-wrap: nowrap;
-  // flex-direction: column;
-  // align-items: center;
 }
 
 .hero__info {
@@ -238,8 +203,6 @@
   .team__modal {
     max-width: 1024px;
     height: 100%;
-    // width: 100%;
-    // height: 100%;
   }
 
   .team__herous {
@@ -274,8 +237,6 @@
 
 .polaroid {
   position: relative;
-  // width: 110px;
-  // height: 170px;
   width: 220px;
   height: 295px;
   margin-top: 10px;
