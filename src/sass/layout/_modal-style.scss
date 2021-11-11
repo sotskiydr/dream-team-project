@@ -60,6 +60,9 @@ table td {
 .modal_movie_description {
   margin-left: 30px;
   width: auto;
+  @media screen and (max-width: 767px){
+    margin-left: 0;
+  }
 }
 .modal_description-filme {
   font-weight: 500;
