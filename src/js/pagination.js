@@ -1,13 +1,13 @@
 import API from '../js/api/API';
 const fetchData = new API();
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
 import { renderGallery }  from './render-gallery';
 import refs from './refs'
 const { galleryList } = refs;
-async function getData(options) {
+
+async function getData(options,data) {
   try {
-    const data = await fetchData.getTrandingMovie();
+    // const data = await fetchData.getTrandingMovie();
     console.log(data)
     options.page = data.page;
     options.totalItems = data.total_pages;
@@ -24,7 +24,7 @@ const container = document.getElementById('pagination');
 const options = {
   totalItems: 1000,
   itemsPerPage: 1,
-  visiblePages: 5,
+  visiblePages: 10,
   page: 1,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
@@ -37,7 +37,7 @@ const options = {
         '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</a>',
     disabledMoveButton:
-      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<span class="tui-page-btn tui-is-disabled tui-{{type}}" >' +
         '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</span>',
     moreButton:
@@ -54,18 +54,19 @@ function createNewCopy(options){
 
 
 
-container.addEventListener('click' , e => {
+container.addEventListener('click' , getNewPage)
+
+function getNewPage(e){
   if(!e.target.classList.contains('tui-page-btn')){
+    return
+
+  }
+  if(isNaN(Number(e.target.textContent))) {
     return
   }
   fetchData.updatePage(Number(e.target.textContent))
-
-  console.log(e.target.textContent)
-  console.log(fetchData.page)
   onLoadPopular()
-})
-
-
+}
 
 async function onLoadPopular() {
   try {
@@ -75,4 +76,6 @@ async function onLoadPopular() {
     renderGallery(data, galleryList);
   } catch (err) {}
 }
-getData(options)
+// getDataPopular(options)
+
+export {getData , options}
