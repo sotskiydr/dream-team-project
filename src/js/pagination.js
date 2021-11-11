@@ -11,13 +11,22 @@ async function getData(options,data,id) {
     options.id = id;
     options.page = data.page;
     options.totalItems = data.total_pages;
-
+    adaptiveMakup(options)
   } catch (err) {
     console.log('error')
   }
   createNewCopy(options)
 }
 
+function adaptiveMakup (options){
+  const container = document.querySelector('.container');
+  const widthContainer = parseInt(getComputedStyle(container).getPropertyValue('width'));
+  if(widthContainer === 768){
+    options.visiblePages = 7;
+  }else if(widthContainer === 320){
+    options.visiblePages = 4;
+  }
+}
 
 const container = document.getElementById('pagination');
 
