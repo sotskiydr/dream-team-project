@@ -4,8 +4,11 @@ export default class FetchData {
   constructor() {
     this.page = 1;
   }
+  updatePage(newValue){
+    this.page = newValue;
+  }
   // Получаем популярное
-  async getTrandingMovie(page) {
+  async getTrandingMovie() {
     const trandingData = `https://api.themoviedb.org/3/trending/movie/week?api_key=${KEY}&page=${this.page}`;
     try {
       const result = await fetch(`${trandingData}`);
