@@ -70,7 +70,7 @@ function getNewPage(e){
   }else{
     onLoadPopular()
   }
-  // onLoadQuery()
+  window.scrollTo({ top: 230, behavior: 'smooth' });
 }
 
 async function onLoadPopular() {
