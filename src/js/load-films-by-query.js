@@ -5,6 +5,7 @@ import mainGallery from '../templates/main-gallery.hbs';
 import genresData from './data/genresData.json';
 import { onCutDate, onToggleGenresData } from './components/newData';
 import { onLoadPopular } from './load-popular-main';
+import {getData , options} from './pagination'
 
 const { galleryList, inputQuery, inputForm, errorMsg } = refs;
 
@@ -20,6 +21,7 @@ async function onSearchSubmit(e) {
   }
   try {
     const data = await fetchDataByQuery.getQueryMovie(inputQuery.value);
+    getData(options,data);
     if (typeof data.results === 'undefined' || data.results.length < 1) {
       errorMsg.innerHTML =
         'Search result not successful. Enter the correct movie name and try again';

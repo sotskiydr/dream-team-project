@@ -7,6 +7,12 @@ export default class FetchData {
   updatePage(newValue){
     this.page = newValue;
   }
+  incrementPage(){
+    if(this.page !== 1000) this.page+=1;
+  }
+  decrementPage(){
+    if(this.page !== 1) this.page-=1;
+  }
   // Получаем популярное
   async getTrandingMovie() {
     const trandingData = `https://api.themoviedb.org/3/trending/movie/week?api_key=${KEY}&page=${this.page}`;
