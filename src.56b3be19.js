@@ -60,4 +60,4 @@ module.exports="/dream-team-project/aleks.a099e264.jpg";
 },{"./heroes":"xJaT","../templates/team.hbs":"amQQ"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main"),require("./js/pagination"),require("./js/modal"),require("./js/load-films-by-query"),require("./js/theme"),require("./js/team");
 },{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7","./js/pagination":"o8lo","./js/modal":"RSqK","./js/load-films-by-query":"JBNt","./js/theme":"qwQt","./js/team":"ZxpD"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-team-project/src.894574a8.js.map
+//# sourceMappingURL=/dream-team-project/src.56b3be19.js.map
