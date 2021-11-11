@@ -3,15 +3,10 @@ const KEY = '9b0c2f9965f33f91e75ff619d689bb58';
 export default class FetchData {
   constructor() {
     this.page = 1;
+    this.query = '';
   }
   updatePage(newValue){
     this.page = newValue;
-  }
-  incrementPage(){
-    if(this.page !== 1000) this.page+=1;
-  }
-  decrementPage(){
-    if(this.page !== 1) this.page-=1;
   }
   // Получаем популярное
   async getTrandingMovie() {
@@ -26,6 +21,7 @@ export default class FetchData {
   };
   // Получаем фильм по значению
   async getQueryMovie (query){
+    localStorage.setItem('query' , query)
     const queryValue = `&query=${query}`;
     const queryData = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&language=en-US&page=${this.page}&include_adult=false`;
     try {

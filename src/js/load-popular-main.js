@@ -8,6 +8,7 @@ import {getData , options} from './pagination'
 export default async function onLoadPopular() {
   try {
     const data = await fetchData.getTrandingMovie();
+    // const id = 'popular';
     getData(options,data)
     renderGallery(data, galleryList);
   } catch (err) {}

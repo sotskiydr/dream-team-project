@@ -5,10 +5,10 @@ import { renderGallery }  from './render-gallery';
 import refs from './refs'
 const { galleryList } = refs;
 
-async function getData(options,data) {
+async function getData(options,data,id) {
   try {
     // const data = await fetchData.getTrandingMovie();
-    console.log(data)
+    options.id = id;
     options.page = data.page;
     options.totalItems = data.total_pages;
 
@@ -65,7 +65,12 @@ function getNewPage(e){
     return
   }
   fetchData.updatePage(Number(e.target.textContent))
-  onLoadPopular()
+  if(options.id === 'query'){
+    onLoadQuery()
+  }else{
+    onLoadPopular()
+  }
+  // onLoadQuery()
 }
 
 async function onLoadPopular() {
@@ -76,6 +81,16 @@ async function onLoadPopular() {
     renderGallery(data, galleryList);
   } catch (err) {}
 }
+
+async function onLoadQuery(){
+  try {
+    const data = await fetchData.getQueryMovie(localStorage.getItem('query'));
+    console.log(data)
+    galleryList.innerHTML = '';
+    renderGallery(data, galleryList);
+  } catch (err) {}
+}
+
 // getDataPopular(options)
 
 export {getData , options}
