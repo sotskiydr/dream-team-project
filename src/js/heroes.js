@@ -16,6 +16,7 @@ export default [
         photo: photoDima,
         position: 'Team Lider',
         linkedin: 'https://www.linkedin.com/',
+        city: 'Odessa',
     },
     
     {
@@ -23,6 +24,7 @@ export default [
         photo: photoEugeniya,
         position: 'Scrum Master',
         linkedin: 'https://www.linkedin.com/',
+        city: 'Melitopol',
     },
     
     {
@@ -30,6 +32,7 @@ export default [
         photo: photoNatasha,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
+        city: 'Odessa',
     },
     
     {
@@ -37,6 +40,7 @@ export default [
         photo: photoAleks,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
+        city: 'Krivoy Rog',
     },
     
     {
@@ -44,6 +48,7 @@ export default [
         photo: photoAndrii,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
+        city: 'Kiev',
     },
      
     {
@@ -51,6 +56,7 @@ export default [
         photo: photoVitalyi,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/in/vitaliy-todorov-2bb56b150/',
+        city: 'Odessa',
     },
        
     {
@@ -58,12 +64,14 @@ export default [
         photo: photoman,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
+        city: 'Ukraine',
     },
        
     {
         name: 'Natalya',
         photo: photoFarafonova,
         position: 'Developer',
-        linkedin: 'https://www.linkedin.com/',
+        linkedin: 'https://www.linkedin.com/in/natalya-farafonova-888411226',
+        city: 'Nikolaev',
     },
 ];

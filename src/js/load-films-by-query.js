@@ -6,14 +6,15 @@ import mainGallery from '../templates/main-gallery.hbs';
 import genresData from './data/genresData.json';
 import { onCutDate, onToggleGenresData } from './components/newData';
 import onLoadPopular from './load-popular-main';
-import {getData , options} from './pagination'
-
-const { galleryList, inputQuery, inputForm, errorMsg } = refs;
+import { getData, options } from './pagination';
+import { removeSpinner } from './components/spinner';
+const { galleryList, inputQuery, inputForm, errorMsg, preloader } = refs;
 
 inputForm.addEventListener('submit', onSearchSubmit);
 
 async function onSearchSubmit(e) {
   e.preventDefault();
+  preloader.classList.remove('done');
   galleryList.innerHTML = '';
   errorMsg.innerHTML = '';
   if (inputQuery.value === '') {
@@ -30,12 +31,14 @@ async function onSearchSubmit(e) {
       onLoadPopular();
       return;
     }
-    getData(options,data,id);
+    getData(options, data, id);
     onCutDate(data);
     onToggleGenresData(data, genresData);
     const markup = mainGallery(data);
     galleryList.insertAdjacentHTML('beforeend', markup);
   } catch (err) {
     console.log('fetchDataByQuery error');
+  } finally {
+    removeSpinner();
   }
 }

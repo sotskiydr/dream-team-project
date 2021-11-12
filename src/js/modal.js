@@ -9,6 +9,7 @@ import genresData from './data/genresData.json';
 import { onCutDate ,addModalData } from './components/newData';
 import modalMarkup from '../templates/modal.hbs';
 import API from '../js/api/API';
+import getID from '../js/add-to-watched'
 const fetchData = new API();
 
 refs.galleryPosterSetModal.addEventListener('click', open);
@@ -55,3 +56,31 @@ async function renderModal(cardId,dataImg) {
     console.log('error');
   }
 }
+
+// ChekLocal
+
+// function chekLocalWatched(dataFilm) {
+//   if (
+//     localStorage.getItem('watched') &&
+//     JSON.parse(localStorage.getItem('watched')).some(el => el.title === dataFilm.title)
+//   ) {
+//     buttonWatchedEl.textContent = 'REMOVE';
+//   } else {
+//     buttonWatchedEl.textContent = 'ADD TO WATCHED';
+//   }
+//   return;
+// }
+
+// function chekLocalQueve(dataFilm) {
+//   if (
+//     localStorage.getItem('queve') &&
+//     JSON.parse(localStorage.getItem('queve')).some(el => el.title === dataFilm.title)
+//   ) {
+//     buttonQueveEl.textContent = 'REMOVE';
+//   } else {
+//     buttonQueveEl.textContent = 'ADD TO QUEVE';
+//   }
+//   return;
+// }
+
+// galleryEl.addEventListener('click', getTitle);
