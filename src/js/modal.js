@@ -52,7 +52,6 @@ async function renderModal(cardId,dataImg) {
     data.img = dataImg;
     const markup = modalMarkup(data);
     refs.galleryBox.insertAdjacentHTML('beforeend', markup);
-    getID(cardId)
   } catch (err) {
     console.log('error');
   }
@@ -84,4 +83,4 @@ async function renderModal(cardId,dataImg) {
 //   return;
 // }
 
-// galleryEl.addEventListener('click', getTitle); 
+// galleryEl.addEventListener('click', getTitle);

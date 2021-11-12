@@ -1,33 +1,30 @@
 import refs from './refs';
 import modalMarkup from './modal.js';
-import API from './api/API'
+import API from './api/API';
+
 const fetchData = new API();
+const { modalFilmEl } = refs;
 
-const { buttonModal } = refs;
-console.log(buttonModal);
-// buttonModal.addEventListener('click', watched)
-// const { buttonWatchedEl } = refs;
+modalFilmEl.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('modal_btn_wotched')) {
+    return;
+  }
+  const id = e.target.id;
+  const posterImg = e.target.getAttribute('data-poster');
+  getData(id, posterImg);
+});
 
-export default async function getID(data) {
-    
-  console.log(data);
-  const getData = await fetchData.getDescriptionMovie(data).then(r => r)
-  console.log(getData);
-  watched(getData)
-  
-  // buttonWatchedEl.addEventListener('click', e => { console.log(e.target)});
+async function getData(id, poster) {
+  const getData = await fetchData.getDescriptionMovie(id).then(r => r);
+  getData.poster_path = poster;
+  watched(getData);
 }
 
 
-
-
 function watched(data) {
-  buttonModal.addEventListener('click', e => {
-    localStorage.setItem('tom', 'cat')
-    console.log(data);
-  })
-  
-  
+  //Здесь прилетела дата по нажатию кнопки
+  console.log(data);
+
 }
 
 //  if (e.target.dataset.value !== 'watched') return;
