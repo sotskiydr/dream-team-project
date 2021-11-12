@@ -12,6 +12,5 @@ export default {
     headerLibrary: document.querySelector('.js_library'),
     preloader: document.getElementById('page-preloader'),
     modalFilmEl: document.querySelector('.modal-markup'),
-    // buttonQueueEl: document.querySelector('.queue-js'),
-     tuiPag: document.querySelector('.tui-pagination'),
+    tuiPag: document.querySelector('.tui-pagination'),
 }
