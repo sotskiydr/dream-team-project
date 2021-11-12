@@ -12,6 +12,14 @@ modalFilmEl.addEventListener('click', (e) => {
   const id = e.target.id;
   const posterImg = e.target.getAttribute('data-poster');
   getData(id, posterImg);
+    if (
+    localStorage.getItem('watched') 
+  ) {
+    buttonWatchedEl.textContent = 'REMOVE';
+  } else {
+    buttonWatchedEl.textContent = 'ADD TO WATCHED';
+  }
+  
 });
 
 async function getData(id, poster) {
@@ -23,41 +31,52 @@ async function getData(id, poster) {
 
 function watched(data) {
   //Здесь прилетела дата по нажатию кнопки
-  console.log(data);
-
+  console.log(data.id);
+  addToWatched(data)
+ 
 }
 
-//  if (e.target.dataset.value !== 'watched') return;
-//     if (!localStorage.getItem('watched')) {
-//     const arrayWatched = [];
-//     addToArrayWatchedFirst(e, arrayWatched);
-//   } else if (JSON.parse(localStorage.getItem('watched')).some(data.id)) {
-//     deleteFromArrayWatched(e);
+function addToWatched(data) {
+  const arrayWatched = [];
+  arrayWatched.push(data.id);
+  localStorage.setItem('watched', JSON.stringify(arrayWatched))
+  
+}
+
+// if (data.id !== 'watched') return;
+  
+//     if (!localStorage.getItem('watched' , data.id)) {
+  // const arrayWatched = [];
+//     addToArrayWatchedFirst(data.id, arrayWatched);
+//   } else if (JSON.parse(localStorage.getItem('watched', data.id))) {
+//     deleteFromArrayWatched(data.id);
 //   } else {
-//     addToArrayWatched(e);
+//     addToArrayWatched(data.id);
 //   }
 
-// function addToArrayWatchedFirst(e, arrayWatched) {
-//   arrayWatched.push(getID);
+// function addToArrayWatchedFirst(data, arrayWatched) {
+//   arrayWatched.push(data.id);
 //   setLocalArrayWatched(arrayWatched);
-//   e.target.textContent = 'REMOVE';
+//   // e.target.textContent = 'REMOVE';
 // }
 
-// function addToArrayWatched(e) {
+// function addToArrayWatched(data) {
 //   const newArrayWatched = JSON.parse(localStorage.getItem('watched'));
-//   newArrayWatched.push(getID);
+//   newArrayWatched.push(data.id);
 //   setLocalArrayWatched(newArrayWatched);
-//   e.target.textContent = 'REMOVE';
+//   // e.target.textContent = 'REMOVE';
+  
 // }
 
-// function deleteFromArrayWatched(e) {
+
+// function deleteFromArrayWatched(data) {
 //   const newArrayWatched = JSON.parse(localStorage.getItem('watched'));
 //   newArrayWatched.splice(
-//     newArrayWatched.findIndex(getID),
-//     1,
+//     newArrayWatched.find(data.id),
+//     0,
 //   );
 //   setLocalArrayWatched(newArrayWatched);
-//   e.target.textContent = 'ADD TO WATCHED';
+//   // e.target.textContent = 'ADD TO WATCHED';
 // }
 
 // function setLocalArrayWatched(array) {
