@@ -6,4 +6,5 @@ export default {
     inputForm: document.querySelector('.header__input_wrapper'),
     errorMsg: document.querySelector('.header__input_msg_error'),
     headerLibrary: document.querySelector('.js_library'),
+    preloader: document.getElementById('page-preloader'),
 }
