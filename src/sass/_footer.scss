@@ -79,19 +79,26 @@
     padding: 20px;
     border-radius: 4px;
     text-align: center;
+    background-image: url(../images/team/code.jpg);
   }
 }
 
 .team__btn {
+  // position: relative;
   top: 10px;
   right: 10px;
   width: 40px;
   height: 40px;
-  color: fuchsia;
-  border: none;
+  background-color: rgb(255, 107, 8, 0.7);
+  box-shadow: rgb(129 188 204) 4px 4px 2px;
+  border: 1px solid black;
+  border-radius: 50%;
 }
 
 .team__eye {
+  position: absolute;
+  top: 10%;
+  right: 10%;
   width: 30px;
   height: 30px;
 }
@@ -118,6 +125,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-color: rgb(245, 241, 241, 0.5);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
@@ -129,9 +137,26 @@
   text-shadow: 4px 4px 2px rgba(129, 188, 204, 1);
 }
 .hero__link {
+  position: relative;
   margin-bottom: 10px;
   cursor: pointer;
   box-shadow: -18px 0 20px -20px #333, 18px 0 20px -20px #333;
+
+  //  ==========LINKEDN TAG ============
+  &::after {
+    content: ' ';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    bottom: 35px;
+    right: 8px;
+    background-image: url(../images/team/linkedn.png);
+    background-size: 100%;
+    background-color: #f7f7f7;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
 }
 
 .hero__image {
@@ -149,16 +174,24 @@
 
 .hero__name {
   margin-top: 25px;
-  color: #545454;
+  color: black;
   text-align: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 24px;
+  // -webkit-text-stroke-width: 0.5px;
+  // -webkit-text-stroke-color: #f7f7f7;
 }
 
 .hero__position {
   margin-top: 10px;
-  color: #777;
-  font-size: 12px;
+  color: black;
+  font-size: 22px;
+}
+
+.hero__city {
+  margin-top: 10px;
+  color: black;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -191,11 +224,15 @@
   }
 
   .hero__name {
-    font-size: 16px;
+    font-size: 26px;
   }
 
   .hero__position {
-    font-size: 14px;
+    font-size: 24px;
+  }
+
+  .hero__city {
+    font-size: 22px;
   }
 }
 
@@ -207,7 +244,7 @@
 
   .team__herous {
     max-width: 1024px;
-    height: 50%;
+    // height: 50%;
   }
 
   .hero {
