@@ -2,18 +2,18 @@ import refs from './refs';
 import modalMarkup from './modal.js';
 
 
-const { modalFilmEl } = refs;
-const arrayQueue = [];
+// const { modalFilmEl } = refs;
+// const arrayQueue = [];
 
 
-function addToQueue(evt) {
-  if (evt.target.dataset.value !== 'queue') {
-    arrayQueue.push(modalMarkup);
-    localStorage.setItem('queue', JSON.stringify(arrayQueue))
-  }
-}
+// function addToQueue(evt) {
+//   if (evt.target.dataset.value !== 'queue') {
+//     arrayQueue.push(modalMarkup);
+//     localStorage.setItem('queue', JSON.stringify(arrayQueue))
+//   }
+// }
 
-modalFilmEl.addEventListener('click', addToQueue);
+// modalFilmEl.addEventListener('click', addToQueue);
 
 
 
