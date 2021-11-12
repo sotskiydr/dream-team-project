@@ -7,13 +7,15 @@ import { getData, options } from './pagination';
 import { removeSpinner } from './components/spinner';
 
 export default async function onLoadPopular() {
-  removeSpinner();
   try {
     const data = await fetchData.getTrandingMovie();
     // const id = 'popular';
     getData(options, data);
     renderGallery(data, galleryList);
-  } catch (err) {}
+  } catch (err) {
+  } finally {
+    removeSpinner();
+  }
 }
 // подгрузка популярного на главную страницу
 onLoadPopular();

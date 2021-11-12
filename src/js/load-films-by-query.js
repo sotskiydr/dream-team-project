@@ -36,8 +36,9 @@ async function onSearchSubmit(e) {
     onToggleGenresData(data, genresData);
     const markup = mainGallery(data);
     galleryList.insertAdjacentHTML('beforeend', markup);
-    removeSpinner();
   } catch (err) {
     console.log('fetchDataByQuery error');
+  } finally {
+    removeSpinner();
   }
 }
