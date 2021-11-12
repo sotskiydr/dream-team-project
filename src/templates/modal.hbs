@@ -1,5 +1,5 @@
 {{#if img}}
-<img class="movie_modal_img" src=https://www.themoviedb.org/t/p/w500{{img}} alt="{{title}}">
+<img class="movie_modal_img" id={{id}} src=https://www.themoviedb.org/t/p/w500{{img}} alt="{{title}}">
 {{else}}
 <div class="gallery__img-error modal">Sorry... We don't have poster for this movie &#9785;</div>
 {{!-- <img class="gallery__img modal" src={{photo_random}} alt="{{title}}" /> --}}
@@ -30,7 +30,7 @@
     <p class="about">about</p>
     <P class="modal_description-filme">{{overview}}</P>
     <div class="modal_buttnons">
-      <button class="modal_btn modal_btn_wotched" type="button">add to Watched</button>
-      <button class="modal_btn modal_btn_queue" type="button">add to queue</button>
+      <button class="modal_btn modal_btn_wotched" type="button" data-value="watched">add to Watched</button>
+      <button class="modal_btn modal_btn_queue" type="button" data-value="queue">add to queue</button>
     </div>
   </div>
