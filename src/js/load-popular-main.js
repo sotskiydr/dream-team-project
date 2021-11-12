@@ -2,8 +2,6 @@ import API from '../js/api/API';
 const fetchData = new API();
 import { renderGallery } from './render-gallery';
 import refs from './refs';
-const { galleryList, logoEl, homeLink } = refs;
-import { getData, options } from './pagination';
 import { removeSpinner } from './components/spinner';
 const { headerEl, galleryList, logoEl, homeLink, formEl, librButtonsDiv,  tuiPag} = refs;
 import {getData , options} from './pagination';
