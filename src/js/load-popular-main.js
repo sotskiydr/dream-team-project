@@ -2,8 +2,8 @@ import API from '../js/api/API';
 const fetchData = new API();
 import { renderGallery } from './render-gallery';
 import refs from './refs';
-const { galleryList, logoEl, homeLink } = refs;
-import {getData , options} from './pagination'
+const { headerEl, galleryList, logoEl, homeLink, formEl, librButtonsDiv,  tuiPag} = refs;
+import {getData , options} from './pagination';
 
 export default async function onLoadPopular() {
   try {
@@ -18,4 +18,14 @@ onLoadPopular();
 
 // подгрузка популярного при клике на лого и home
 logoEl.addEventListener('click', onLoadPopular);
-homeLink.addEventListener('click', onLoadPopular);
+homeLink.addEventListener('click', e => {
+  e.preventDefault();
+  galleryList.innerHTML = "";
+  headerEl.classList.remove('libr-header-img');
+  headerEl.classList.add('main-header-img');
+  formEl.style.display = "block";
+  formEl.reset();
+  librButtonsDiv.classList.add('hidden');
+  onLoadPopular();
+  tuiPag.style.display = "block";
+});
