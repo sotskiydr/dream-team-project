@@ -3,15 +3,19 @@ const fetchData = new API();
 import { renderGallery } from './render-gallery';
 import refs from './refs';
 const { galleryList, logoEl, homeLink } = refs;
-import {getData , options} from './pagination'
+import { getData, options } from './pagination';
+import { removeSpinner } from './components/spinner';
 
 export default async function onLoadPopular() {
   try {
     const data = await fetchData.getTrandingMovie();
     // const id = 'popular';
-    getData(options,data)
+    getData(options, data);
     renderGallery(data, galleryList);
-  } catch (err) {}
+  } catch (err) {
+  } finally {
+    removeSpinner();
+  }
 }
 // подгрузка популярного на главную страницу
 onLoadPopular();

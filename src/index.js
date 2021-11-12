@@ -8,3 +8,4 @@ import './js/theme';
 import './js/team';
 import './js/add-to-watched';
 import './js/add-to-queue';
+import './js/components/spinner';
