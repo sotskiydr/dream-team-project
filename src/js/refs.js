@@ -1,6 +1,10 @@
 export default {
+    headerEl: document.querySelector('header'),
     logoEl: document.querySelector('.js-logo'),
     homeLink: document.querySelector('.js-home'),
+    librLink: document.querySelector('.js-lib'),
+    formEl: document.querySelector('.header__input_wrapper'),
+    librButtonsDiv: document.querySelector('.header__library_btm'),
     galleryList: document.querySelector('.js-gallery'),
     inputQuery: document.querySelector('.header__input'),
     inputForm: document.querySelector('.header__input_wrapper'),
@@ -9,6 +13,5 @@ export default {
     preloader: document.getElementById('page-preloader'),
     modalFilmEl: document.querySelector('.modal-markup'),
     // buttonQueueEl: document.querySelector('.queue-js'),
-
-
+     tuiPag: document.querySelector('.tui-pagination'),
 }
