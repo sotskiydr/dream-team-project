@@ -47,4 +47,3 @@ if(theme === 'dark-theme'){
     document.querySelector('body').classList.remove('light-theme')
     document.querySelector('body').classList.add('dark-theme')
 }
-
