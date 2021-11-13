@@ -8,7 +8,17 @@ const { modalFilmEl } = refs;
 let currentFilm;
 
 modalFilmEl.addEventListener('click', (e) => {
-  if (e.target.classList.contains('modal_btn_wotched')) {
+  if(!e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')){
+    removeToStore('watched')
+    e.target.classList.add('modal_btn_wotched')
+    return
+  }
+  if(!e.target.classList.contains('modal_btn_queue') && e.target.classList.contains('queue')){
+    removeToStore('queue')
+    e.target.classList.add('modal_btn_queue')
+    return
+  }
+  if (e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
     const buttonWatchedEl = e.target;
     const id = e.target.id;
     const posterImg = e.target.getAttribute('data-poster');
@@ -18,8 +28,11 @@ modalFilmEl.addEventListener('click', (e) => {
     } else {
       buttonWatchedEl.textContent = 'ADD TO WATCHED';
     }
+    e.target.classList.remove('modal_btn_wotched')
   }
   if(e.target.classList.contains('modal_btn_queue')){
+    e.target.classList.add('modal-btn__queue-remove')
+    e.target.classList.remove('modal_btn_queue')
     const buttonWatchedEl = e.target;
     const id = e.target.id;
     const posterImg = e.target.getAttribute('data-poster');
@@ -30,6 +43,7 @@ modalFilmEl.addEventListener('click', (e) => {
       buttonWatchedEl.textContent = 'ADD TO WATCHED';
     }
   }
+  e.target.classList.remove('modal_btn_queue');
 });
 
 async function getData(id, poster,variable) {
@@ -60,43 +74,9 @@ function addToQueue(data){
   localStorage.setItem('queue', JSON.stringify(NextMovie));
 }
 
-// if (data.id !== 'watched') return;
-
-//     if (!localStorage.getItem('watched' , data.id)) {
-// const arrayWatched = [];
-//     addToArrayWatchedFirst(data.id, arrayWatched);
-//   } else if (JSON.parse(localStorage.getItem('watched', data.id))) {
-//     deleteFromArrayWatched(data.id);
-//   } else {
-//     addToArrayWatched(data.id);
-//   }
-
-// function addToArrayWatchedFirst(data, arrayWatched) {
-//   arrayWatched.push(data.id);
-//   setLocalArrayWatched(arrayWatched);
-//   // e.target.textContent = 'REMOVE';
-// }
-
-// function addToArrayWatched(data) {
-//   const newArrayWatched = JSON.parse(localStorage.getItem('watched'));
-//   newArrayWatched.push(data.id);
-//   setLocalArrayWatched(newArrayWatched);
-//   // e.target.textContent = 'REMOVE';
-
-// }
-
-
-// function deleteFromArrayWatched(data) {
-//   const newArrayWatched = JSON.parse(localStorage.getItem('watched'));
-//   newArrayWatched.splice(
-//     newArrayWatched.find(data.id),
-//     0,
-//   );
-//   setLocalArrayWatched(newArrayWatched);
-//   // e.target.textContent = 'ADD TO WATCHED';
-// }
-
-// function setLocalArrayWatched(array) {
-//   localStorage.setItem('watched', JSON.stringify(array));
-// }
-
+function removeToStore(storage) {
+  const currentMovie = localStorage.getItem(storage);
+  const NextMovie = JSON.parse(currentMovie);
+  const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);
+  localStorage.setItem(storage, JSON.stringify(UpdateMovie));
+}
