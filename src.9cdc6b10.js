@@ -68,4 +68,4 @@ module.exports="/dream-team-project/aleks.a099e264.jpg";
 },{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";function e(){localStorage.getItem("watched")||localStorage.setItem("watched","[]")}function r(){localStorage.getItem("queue")||localStorage.setItem("queue","[]")}require("./sass/main.scss"),require("./js/example-api"),require("./js/load-popular-main"),require("./js/pagination"),require("./js/modal"),require("./js/load-films-by-query"),require("./js/theme"),require("./js/team"),require("./js/add-to-watched"),require("./js/add-to-queue"),require("./js/components/spinner"),require("./js/show-libr-header"),r(),e();
 },{"./sass/main.scss":"clu1","./js/example-api":"msV8","./js/load-popular-main":"GxH7","./js/pagination":"o8lo","./js/modal":"RSqK","./js/load-films-by-query":"JBNt","./js/theme":"qwQt","./js/team":"ZxpD","./js/add-to-watched":"nzWO","./js/add-to-queue":"DAwY","./js/components/spinner":"mOXT","./js/show-libr-header":"hHv4"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-team-project/src.a705a433.js.map
+//# sourceMappingURL=/dream-team-project/src.9cdc6b10.js.map
