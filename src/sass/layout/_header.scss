@@ -94,23 +94,6 @@
     url('../images/hero/library_hero_mobile@1x.jpg');
 }
 
-.logo {
-  &__icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  &__text {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    display: none;
-  }
-
-  &__icon {
-    fill: $logoIconColor;
-  }
-}
 
 .site-nav__link {
   position: relative;
@@ -160,9 +143,6 @@
   .libr-header-img {
     background-image: linear-gradient($shadowColor, $shadowColor),
       url('../images/hero/library_hero_tablet@1x.jpg');
-  }
-  .logo__text {
-    display: contents;
   }
 }
 

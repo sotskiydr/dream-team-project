@@ -1,0 +1,74 @@
+.logo {
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    display: none;
+    transition: color $transitionDuration $transitionAnim;
+  }
+
+  &__text:hover,
+  &:focus &__text {
+    color: $accentColor;
+    transition: color $transitionDuration $transitionAnim;
+  }
+
+  &__icon {
+    stroke: $logoIconColor;
+    stroke-dasharray: 102;
+    stroke-dashoffset: 0;
+    animation: animate-logo-out 2s linear forwards;
+  }
+
+  &__icon:hover,
+  &:focus &__icon {
+    animation: animate-logo-in 2s linear forwards;
+  }
+}
+
+.logo:hover {
+  animation: animate-logo-in 2s linear forwards;
+}
+
+@keyframes animate-logo-in {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 102;
+  }
+  80% {
+    stroke-dashoffset: 204;
+  }
+  100% {
+    stroke: $accentColor;
+  }
+}
+
+@keyframes animate-logo-out {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: $accentColor;
+  }
+  40% {
+    stroke-dashoffset: 204;
+  }
+  80% {
+    stroke-dashoffset: 102;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: $logoIconColor;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo__text {
+    display: contents;
+  }
+}
