@@ -12,16 +12,24 @@
   margin-bottom: 30px;
 }
 
+.gallery__item:hover {
+  box-shadow: 0px 5px 10px 5px rgba(255, 107, 8, 0.2);
+}
+
 .gallery__img {
   width: 280px;
   height: 402px;
   border-radius: 5px;
+  cursor: zoom-in;
 
-  transition: transform $transitionDuration $transitionAnim;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 1000ms linear 500ms;
+}
 
-  &:hover {
-    transform: scale(1.03);
-  }
+.gallery__img.appear {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .gallery__img-error {

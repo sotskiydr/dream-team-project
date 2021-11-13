@@ -1,7 +1,7 @@
 {{#each results}}
     <li class="gallery__item" id={{id}} data-img={{poster_path}}>
         {{#if poster_path}}
-        <img class="gallery__img modal" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt="{{title}}" />
+        <img loading="lazy" class="gallery__img modal" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt="{{title}}" />
         {{else}}
         <div class="gallery__img-error modal">Sorry... We don't have poster for this movie &#9785;</div>
         {{/if}}
