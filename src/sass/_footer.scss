@@ -79,9 +79,9 @@
     padding: 20px;
     border-radius: 4px;
     text-align: center;
-    background-image: url(../images/team/code.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: url(../images/team/code.jpg);
+    // background-repeat: no-repeat;
+    // background-size: cover;
   }
 }
 
@@ -91,10 +91,11 @@
   right: 10px;
   width: 40px;
   height: 40px;
-  background-color: rgb(255, 107, 8, 0.7);
-  box-shadow: rgb(129 188 204) 4px 4px 2px;
-  border: 1px solid black;
-  border-radius: 50%;
+  border: none;
+  // background-color: rgb(255, 107, 8, 0.7);
+  // box-shadow: rgb(129 188 204) 4px 4px 2px;
+  // border: 1px solid black;
+  // border-radius: 50%;
 }
 
 .team__eye {
