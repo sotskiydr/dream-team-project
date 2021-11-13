@@ -5,21 +5,22 @@ import API from './api/API';
 const fetchData = new API();
 const { modalFilmEl } = refs;
 
+let currentFilm;
+
 modalFilmEl.addEventListener('click', (e) => {
   if (!e.target.classList.contains('modal_btn_wotched')) {
     return;
   }
+  const buttonWatchedEl = e.target;
   const id = e.target.id;
   const posterImg = e.target.getAttribute('data-poster');
   getData(id, posterImg);
-    if (
-    localStorage.getItem('watched') 
-  ) {
+  if (localStorage.getItem('watched')) {
     buttonWatchedEl.textContent = 'REMOVE';
   } else {
     buttonWatchedEl.textContent = 'ADD TO WATCHED';
   }
-  
+
 });
 
 async function getData(id, poster) {
@@ -32,21 +33,23 @@ async function getData(id, poster) {
 function watched(data) {
   //Здесь прилетела дата по нажатию кнопки
   console.log(data.id);
-  addToWatched(data)
- 
+  addToWatched(data);
+
 }
 
 function addToWatched(data) {
-  const arrayWatched = [];
-  arrayWatched.push(data.id);
-  localStorage.setItem('watched', JSON.stringify(arrayWatched))
-  
+  currentFilm = data;
+  console.log(currentFilm)
+  const currentMovie = localStorage.getItem('watched');
+  const NextMovie = JSON.parse(currentMovie);
+  NextMovie.push(currentFilm);
+  localStorage.setItem('watched', JSON.stringify(NextMovie));
 }
 
 // if (data.id !== 'watched') return;
-  
+
 //     if (!localStorage.getItem('watched' , data.id)) {
-  // const arrayWatched = [];
+// const arrayWatched = [];
 //     addToArrayWatchedFirst(data.id, arrayWatched);
 //   } else if (JSON.parse(localStorage.getItem('watched', data.id))) {
 //     deleteFromArrayWatched(data.id);
@@ -65,7 +68,7 @@ function addToWatched(data) {
 //   newArrayWatched.push(data.id);
 //   setLocalArrayWatched(newArrayWatched);
 //   // e.target.textContent = 'REMOVE';
-  
+
 // }
 
 
