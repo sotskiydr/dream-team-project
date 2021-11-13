@@ -15,7 +15,7 @@ export default [
         name: 'Dima',
         photo: photoDima,
         position: 'Team Lider',
-        linkedin: 'https://www.linkedin.com/',
+        linkedin: 'https://www.linkedin.com/in/dima-sotskiy-36bb361ba/',
         city: 'Odessa',
     },
     
@@ -24,7 +24,7 @@ export default [
         photo: photoEugeniya,
         position: 'Scrum Master',
         linkedin: 'https://www.linkedin.com/',
-        city: 'Melitopol',
+        city: 'Mariupol',
     },
     
     {
