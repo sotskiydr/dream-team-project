@@ -7,4 +7,11 @@ export function renderGallery(data, place) {
     onToggleGenresData(data, genresData);
     const markup = mainGallery(data);
     place.insertAdjacentHTML('beforeend', markup);
+
+    const imgGallery = place.children;
+    const imgArray = [...imgGallery];
+    imgArray.forEach(img => {
+        img.firstElementChild.addEventListener('load', e => e.target.classList.add('appear'), { once: true });
+    })
+
 }

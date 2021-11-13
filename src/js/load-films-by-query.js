@@ -1,12 +1,9 @@
 import refs from './refs';
 import API from '../js/api/API';
 const fetchDataByQuery = new API();
-import mainGallery from '../templates/main-gallery.hbs';
-
-import genresData from './data/genresData.json';
-import { onCutDate, onToggleGenresData } from './components/newData';
 import onLoadPopular from './load-popular-main';
 import { getData, options } from './pagination';
+import { renderGallery } from './render-gallery';
 import { removeSpinner } from './components/spinner';
 const { galleryList, inputQuery, inputForm, errorMsg, preloader } = refs;
 
@@ -32,10 +29,7 @@ async function onSearchSubmit(e) {
       return;
     }
     getData(options, data, id);
-    onCutDate(data);
-    onToggleGenresData(data, genresData);
-    const markup = mainGallery(data);
-    galleryList.insertAdjacentHTML('beforeend', markup);
+    renderGallery(data, galleryList);
   } catch (err) {
     console.log('fetchDataByQuery error');
   } finally {
