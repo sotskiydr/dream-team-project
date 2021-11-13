@@ -8,42 +8,56 @@ const { modalFilmEl } = refs;
 let currentFilm;
 
 modalFilmEl.addEventListener('click', (e) => {
-  if (!e.target.classList.contains('modal_btn_wotched')) {
-    return;
+  if (e.target.classList.contains('modal_btn_wotched')) {
+    const buttonWatchedEl = e.target;
+    const id = e.target.id;
+    const posterImg = e.target.getAttribute('data-poster');
+    getData(id, posterImg,'watched');
+    if (localStorage.getItem('watched')) {
+      buttonWatchedEl.textContent = 'REMOVE';
+    } else {
+      buttonWatchedEl.textContent = 'ADD TO WATCHED';
+    }
   }
-  const buttonWatchedEl = e.target;
-  const id = e.target.id;
-  const posterImg = e.target.getAttribute('data-poster');
-  getData(id, posterImg);
-  if (localStorage.getItem('watched')) {
-    buttonWatchedEl.textContent = 'REMOVE';
-  } else {
-    buttonWatchedEl.textContent = 'ADD TO WATCHED';
+  if(e.target.classList.contains('modal_btn_queue')){
+    const buttonWatchedEl = e.target;
+    const id = e.target.id;
+    const posterImg = e.target.getAttribute('data-poster');
+    getData(id, posterImg,'queue');
+    if (localStorage.getItem('watched')) {
+      buttonWatchedEl.textContent = 'REMOVE';
+    } else {
+      buttonWatchedEl.textContent = 'ADD TO WATCHED';
+    }
   }
-
 });
 
-async function getData(id, poster) {
+async function getData(id, poster,variable) {
   const getData = await fetchData.getDescriptionMovie(id).then(r => r);
   getData.poster_path = poster;
-  watched(getData);
+  if(variable === 'watched'){
+    addToWatched(getData);
+  }
+  if(variable === 'queue'){
+    addToQueue(getData);
+  }
 }
 
-
-function watched(data) {
-  //Здесь прилетела дата по нажатию кнопки
-  console.log(data.id);
-  addToWatched(data);
-
-}
 
 function addToWatched(data) {
   currentFilm = data;
-  console.log(currentFilm)
   const currentMovie = localStorage.getItem('watched');
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
   localStorage.setItem('watched', JSON.stringify(NextMovie));
+}
+
+function addToQueue(data){
+  currentFilm = data;
+  const currentMovie = localStorage.getItem('queue');
+  const NextMovie = JSON.parse(currentMovie);
+  NextMovie.push(currentFilm);
+  localStorage.setItem('queue', JSON.stringify(NextMovie));
 }
 
 // if (data.id !== 'watched') return;
