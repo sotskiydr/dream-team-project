@@ -36,6 +36,12 @@
 
   font-size: 28px;
   line-height: 1.8;
+
+  transition: transform $transitionDuration $transitionAnim;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .gallery__description {
