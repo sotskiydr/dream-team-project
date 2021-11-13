@@ -2,7 +2,7 @@ const refs = {
   'galleryPosterSetModal': document.querySelector('.js-gallery'),
   'closeBtn': document.querySelector('.modal__button_close'),
   'modalBackdrop': document.querySelector('.modal_backdrop'),
-  'galleryBox': document.querySelector('.modal-markup')
+  'galleryBox': document.querySelector('.modal-markup'),
 }
 
 import genresData from './data/genresData.json';
@@ -52,35 +52,47 @@ async function renderModal(cardId,dataImg) {
     data.img = dataImg;
     const markup = modalMarkup(data);
     refs.galleryBox.insertAdjacentHTML('beforeend', markup);
+    toCheckIdInStorage(cardId)
   } catch (err) {
     console.log('error');
   }
 }
 
-// ChekLocal
+function toCheckIdInStorage (id){
+  let valueWatched = false;
+  let valueQueue = false;
+  const watched = JSON.parse(localStorage.getItem('watched'));
+  const queue = JSON.parse(localStorage.getItem('queue'));
+  for (const el of watched) {
+    if(el.id == id){
+      valueWatched = true;
+    }
+  }
+  for (const el of queue) {
+    if(el.id == id){
+      valueQueue = true;
+    }
+  }
 
-// function chekLocalWatched(dataFilm) {
-//   if (
-//     localStorage.getItem('watched') &&
-//     JSON.parse(localStorage.getItem('watched')).some(el => el.title === dataFilm.title)
-//   ) {
-//     buttonWatchedEl.textContent = 'REMOVE';
-//   } else {
-//     buttonWatchedEl.textContent = 'ADD TO WATCHED';
-//   }
-//   return;
-// }
+  onChangeModalBtn(valueWatched,'watched');
+  onChangeModalBtn(valueQueue,'queue');
+}
 
-// function chekLocalQueve(dataFilm) {
-//   if (
-//     localStorage.getItem('queve') &&
-//     JSON.parse(localStorage.getItem('queve')).some(el => el.title === dataFilm.title)
-//   ) {
-//     buttonQueveEl.textContent = 'REMOVE';
-//   } else {
-//     buttonQueveEl.textContent = 'ADD TO QUEVE';
-//   }
-//   return;
-// }
-
-// galleryEl.addEventListener('click', getTitle);
+function onChangeModalBtn (value,valueBtn){
+  if(valueBtn === 'watched'){
+    const watchedBtn = document.querySelector('.watched')
+    if(value === true){
+      console.log('work')
+      watchedBtn.textContent = 'REMOVE FROM WATCHED';
+      watchedBtn.classList.remove('modal_btn_wotched');
+    }
+  }
+  if(valueBtn === 'queue'){
+    const watchedBtn = document.querySelector('.queue')
+    if(value === true){
+      console.log('work')
+      watchedBtn.textContent = 'REMOVE FROM QUEUE';
+      watchedBtn.classList.remove('modal_btn_queue');
+    }
+  }
+}
