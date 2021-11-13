@@ -7,40 +7,40 @@ const { modalFilmEl } = refs;
 let currentFilm;
 
 modalFilmEl.addEventListener('click', (e) => {
-  if(!e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')){
+  if (!e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
     const id = e.target.id;
     const posterImg = e.target.getAttribute('data-poster');
-    getData(id, posterImg,'remove-watched');
+    getData(id, posterImg, 'remove-watched');
     // removeToStore('watched')
-    e.target.classList.add('modal_btn_wotched')
-    e.target.textContent = 'ADD TO WATCH'
-    return
+    e.target.classList.add('modal_btn_wotched');
+    e.target.textContent = 'ADD TO WATCH';
+    return;
   }
-  if(!e.target.classList.contains('modal_btn_queue') && e.target.classList.contains('queue')){
+  if (!e.target.classList.contains('modal_btn_queue') && e.target.classList.contains('queue')) {
     const id = e.target.id;
     const posterImg = e.target.getAttribute('data-poster');
-    getData(id, posterImg,'remove-queue');
-    e.target.classList.add('modal_btn_queue')
-    e.target.textContent = 'ADD TO QUEUE'
-    return
+    getData(id, posterImg, 'remove-queue');
+    e.target.classList.add('modal_btn_queue');
+    e.target.textContent = 'ADD TO QUEUE';
+    return;
   }
   if (e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
     const buttonWatchedEl = e.target;
     const id = e.target.id;
     const posterImg = e.target.getAttribute('data-poster');
-    getData(id, posterImg,'watched');
+    getData(id, posterImg, 'watched');
     if (localStorage.getItem('watched')) {
       buttonWatchedEl.textContent = 'REMOVE FROM WATCHED';
     } else {
       buttonWatchedEl.textContent = 'ADD TO WATCHED';
     }
-    e.target.classList.remove('modal_btn_wotched')
+    e.target.classList.remove('modal_btn_wotched');
   }
-  if(e.target.classList.contains('modal_btn_queue')){
+  if (e.target.classList.contains('modal_btn_queue')) {
     const buttonWatchedEl = e.target;
     const id = e.target.id;
     const posterImg = e.target.getAttribute('data-poster');
-    getData(id, posterImg,'queue');
+    getData(id, posterImg, 'queue');
     if (localStorage.getItem('watched')) {
       buttonWatchedEl.textContent = 'REMOVE FROM QUEUE';
     } else {
@@ -50,35 +50,35 @@ modalFilmEl.addEventListener('click', (e) => {
   }
 });
 
-async function getData(id, poster,variable) {
+async function getData(id, poster, variable) {
   const getData = await fetchData.getDescriptionMovie(id).then(r => r);
   getData.poster_path = poster;
-  console.log(getData)
-  if(variable === 'watched'){
-    addToWatched(getData);
+  console.log(getData);
+  if (variable === 'watched') {
+    addToLibrary(getData);
   }
-  if(variable === 'queue'){
+  if (variable === 'queue') {
     addToQueue(getData);
   }
-  if(variable === 'remove-watched'){
-    removeToStore(getData,'watched')
+  if (variable === 'remove-watched') {
+    removeToStore(getData, 'watched');
   }
-  if(variable === 'remove-queue'){
-    removeToStore(getData,'queue')
+  if (variable === 'remove-queue') {
+    removeToStore(getData, 'queue');
   }
 }
 
 
-function addToWatched(data) {
+function addToLibrary(data) {
   currentFilm = data;
-  console.log(currentFilm)
+  console.log(currentFilm);
   const currentMovie = localStorage.getItem('watched');
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
   localStorage.setItem('watched', JSON.stringify(NextMovie));
 }
 
-function addToQueue(data){
+function addToQueue(data) {
   currentFilm = data;
   const currentMovie = localStorage.getItem('queue');
   const NextMovie = JSON.parse(currentMovie);
@@ -86,9 +86,9 @@ function addToQueue(data){
   localStorage.setItem('queue', JSON.stringify(NextMovie));
 }
 
-function removeToStore(data,storage) {
+function removeToStore(data, storage) {
   currentFilm = data;
-  console.log(currentFilm)
+  console.log(currentFilm);
   const currentMovie = localStorage.getItem(storage);
   const NextMovie = JSON.parse(currentMovie);
   const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);
