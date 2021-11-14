@@ -52,7 +52,7 @@ modalFilmEl.addEventListener('click', (e) => {
 
 async function getData(id, poster, variable) {
   const getData = await fetchData.getDescriptionMovie(id).then(r => r);
-  getData.poster_path = poster;
+  // getData.poster_path = poster;
   if (variable === 'watched') {
     addToLibrary(getData);
   }
@@ -92,5 +92,11 @@ function removeToStore(data, storage) {
   const NextMovie = JSON.parse(currentMovie);
   const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);
   localStorage.setItem(storage, JSON.stringify(UpdateMovie));
+  if(localStorage.getItem('page') === 'library'){
+    console.log('work')
+    galleryList.innerHTML = '';
+    const data = JSON.parse(localStorage.getItem('watched'));
+    renderGallery(data,galleryList,'library')
+  }
 }
 
