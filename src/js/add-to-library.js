@@ -93,3 +93,4 @@ function removeToStore(data, storage) {
   const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);
   localStorage.setItem(storage, JSON.stringify(UpdateMovie));
 }
+
