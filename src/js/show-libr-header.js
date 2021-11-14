@@ -24,6 +24,10 @@ export function showLibrHeader(e) {
 
 function myLibraryMarkup() {
   const data = JSON.parse(localStorage.getItem('watched'));
-  renderGallery(data, galleryList, 'library');
-
+    renderGallery(data, galleryList, 'library');
+    const page = localStorage.getItem('page')
+    if (page === 'library' && galleryList.childNodes.length !== 0) {
+    mainWarning.classList.add('hidden');
 }
+}
+
