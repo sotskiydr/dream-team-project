@@ -1,69 +1,80 @@
 body.dark-theme {
   background: linear-gradient(90deg, rgb(22, 20, 20) 20%, rgb(68, 46, 46) 50%, rgb(22, 20, 20) 80%);
   color: $additionalColor;
-  p{
+  p {
     color: $additionalColor;
   }
   // смена цвета модалки
-  .modal_window{
-    background: linear-gradient( 90deg, rgb(36, 33, 33) 20%, rgb(65, 45, 45) 50%, rgb(88, 64, 64) 80%)
+  .modal_window {
+    background: linear-gradient(
+      90deg,
+      rgb(36, 33, 33) 20%,
+      rgb(65, 45, 45) 50%,
+      rgb(88, 64, 64) 80%
+    );
   }
-  .modal_btn{
+  .modal_btn {
     color: rgb(183, 191, 194);
     border: 2px solid rgb(94, 107, 59);
     &:hover,
-    &:focus{
+    &:focus {
       color: $additionalColor;
       border: none;
     }
-    
   }
   // смена цвета модалки dream-team
-  .team__modal{
+  .team__modal {
     background: $secondColor;
-    p{
+    p {
       color: $mainColor;
     }
   }
-  .team__btn{
+  .team__btn {
     background-color: transparent;
   }
-  .hero__link{
+  .hero__link {
     box-shadow: none;
   }
   //.footer__text-conteiner
-  .footer__section{
-    background: linear-gradient(90deg, rgb(22, 20, 20) 20%, rgb(68, 46, 46) 50%, rgb(22, 20, 20) 80%)
+  .footer__section {
+    background: linear-gradient(
+      180deg,
+      rgb(22, 20, 20) 20%,
+      rgb(68, 46, 46) 50%,
+      rgb(22, 20, 20) 80%
+    );
+    span {
+      color: $additionalColor;
+    }
   }
-  
+
   // смена цвета пагинации(кнопок)
   .tui-pagination .tui-page-btn {
     color: $additionalColor;
   }
   .tui-pagination .tui-is-selected,
-.tui-pagination strong{
-  color: $additionalColor;
-}
-.tui-page-inputs .tui-page-input{
-  color: $additionalColor;
-}
+  .tui-pagination strong {
+    color: $additionalColor;
+  }
+  .tui-page-inputs .tui-page-input {
+    color: $additionalColor;
+  }
   .container {
     color: $additionalColor;
   }
-  .tui-first-child .tui-last-child{
+  .tui-first-child .tui-last-child {
     color: $additionalColor;
   }
-  .tui-next{
+  .tui-next {
     color: $additionalColor;
   }
-  .tui-prev-is-ellip{
+  .tui-prev-is-ellip {
     color: $additionalColor;
   }
-  
+
   // {
   //   color: $additionalColor;
   // }
-  
 }
 p.dark-theme {
   background: linear-gradient(90deg, rgb(0, 0, 0) 10%, rgb(47, 46, 46) 50%, rgb(0, 0, 0) 90%);
@@ -79,7 +90,7 @@ p.dark-theme {
   height: 32px;
   border-radius: 50em;
   padding: 3px 0;
-  right: 10%;
+  right: 0;
   top: 180px;
   z-index: 1;
   // color: white;
@@ -109,20 +120,20 @@ p.dark-theme {
   cursor: pointer;
 }
 .theme-switch__marker {
-    position: relative;
-    background-color: #fff;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    z-index: 2;
-    pointer-events: none;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    transform: translateX(3px);
-    transition: transform 250ms var(--timing-function);
-  }
+  position: relative;
+  background-color: $additionalColor;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateX(3px);
+  transition: transform $transitionDuration $transitionAnim;
+}
 .theme-switch__toggle:checked + .theme-switch__track {
   background-color: #d3d3d4;
-  border-color: $logoIconColor
+  border-color: $logoIconColor;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
@@ -130,5 +141,5 @@ p.dark-theme {
 }
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 2px #ff6b08;
+  box-shadow: 0 0 0 2px $accentColor;
 }

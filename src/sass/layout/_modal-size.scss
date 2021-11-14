@@ -1,36 +1,35 @@
-.modal-markup{
+.modal-markup {
   display: block;
 
-@media screen and (min-width: 768px){
-  display: flex;
+  @media screen and (min-width: 768px) {
+    display: flex;
   }
 }
-.modal_backdrop{
+.modal_backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity $transitionDuration $transitionAnim,
+    visibility $transitionDuration $transitionAnim;
   z-index: 3;
   overflow-y: scroll;
-  
-  transition: all 250ms linear 250ms;
+
+  transition: all $transitionDuration linear $transitionDuration;
 
   &.is-hidden {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-   
+
     transform: scale(1);
-    transition: opacity 1500ms cubic-bezier(0.4, 0, 0.2, 1),
-  visibility 1500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 1500ms $transitionAnim, visibility 1500ms $transitionAnim;
   }
 }
-.modal_window{
-  background-color: #ffffff;
+.modal_window {
+  background-color: $additionalColor;
   position: absolute;
   border-radius: 5px;
   left: 50%;
@@ -38,10 +37,10 @@
   transform: translate(-50%, -50%);
   z-index: 1;
   height: auto;
-  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
   box-sizing: border-box;
-
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
     width: 280px;
@@ -52,35 +51,63 @@
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     width: 618px;
     padding: 42px 20px 30px;
-    flex-direction:row;
+    flex-direction: row;
   }
   @media screen and (min-width: 1024px) {
-    flex-direction:row;
+    flex-direction: row;
     width: 882px;
     padding: 50px 30px 40px;
   }
 }
-.movie_modal_img{
+.movie_modal_img {
   border-radius: 5px;
-  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
-  
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  max-width: 240px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transition: transform $transitionDuration $transitionAnim;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    max-width: 240px;
+    max-height: 356px;
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    max-width: 264px;
+    max-height: 374px;
+    margin-bottom: 146px;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 396px;
+    max-height: 480px;
+    margin-bottom: 40px;
+  }
+}
+
+.movie_modal_img-error {
+  min-width: 240px;
   max-height: 356px;
   margin-bottom: 30px;
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  max-width: 264px;
-  max-height: 374px;
-  margin-bottom: 146px;
-}
-@media screen and (min-width: 1024px) {
-  max-width: 396px;
-  max-height: 480px;
-  margin-bottom: 40px;
+  padding: 45px;
+  color: $secondColor;
+  background-color: rgb(250, 250, 244);
+
+  text-align: center;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 1.8;
+
+  transition: transform $transitionDuration $transitionAnim;
+
+  &:hover {
+    transform: scale(1.03);
   }
-  }
-.modal__button_close{
+}
+
+.modal__button_close {
   box-sizing: border-box;
   position: absolute;
   top: 10px;
@@ -91,21 +118,21 @@
   border: rgba(0, 0, 0, 0.1);
   background: transparent;
 }
-.mobile_modal__button_close_simvol{
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-stroke: black;
+.mobile_modal__button_close_simvol {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  stroke: $mainColor;
 
   &:hover,
   &:focus {
-    fill: #FF6B01;
-    stroke: #FF6B01;
+    fill: $accentColor;
+    stroke: $accentColor;
     cursor: pointer;
   }
 }
-.modal-table{
+.modal-table {
   width: auto;
   height: auto;
 }
