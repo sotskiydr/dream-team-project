@@ -1,5 +1,5 @@
 import refs from './refs';
-const { headerEl, librLink, formEl, librButtonsDiv, galleryList, tuiPag } = refs;
+const { headerEl, librLink, formEl, librButtonsDiv, mainWarning, galleryList, tuiPag } = refs;
 
 librLink.addEventListener('click', showLibrHeader);
 
@@ -14,5 +14,6 @@ export function showLibrHeader(e) {
     formEl.style.display = "none";
     librButtonsDiv.classList.remove('hidden');
     galleryList.innerHTML = "";
+    mainWarning.classList.remove('hidden');
     tuiPag.style.display = "none";
 }

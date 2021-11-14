@@ -3,7 +3,7 @@ const fetchData = new API();
 import { renderGallery } from './render-gallery';
 import refs from './refs';
 import { removeSpinner } from './components/spinner';
-const { headerEl, galleryList, logoEl, homeLink, formEl, librButtonsDiv,  tuiPag} = refs;
+const { headerEl, galleryList, logoEl, homeLink, formEl, librButtonsDiv, mainWarning, tuiPag} = refs;
 import {getData , options} from './pagination';
 
 export default async function onLoadPopular() {
@@ -30,6 +30,7 @@ homeLink.addEventListener('click', e => {
   formEl.style.display = "block";
   formEl.reset();
   librButtonsDiv.classList.add('hidden');
+  mainWarning.classList.add('hidden');
   onLoadPopular();
   tuiPag.style.display = "block";
 });
