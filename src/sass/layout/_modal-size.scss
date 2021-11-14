@@ -25,7 +25,7 @@
     visibility: hidden;
 
     transform: scale(1);
-    transition: opacity 1500ms $transitionAnim, visibility 1500ms $transitionAnim;
+    transition: opacity 500ms $transitionAnim, visibility 500ms $transitionAnim;
   }
 }
 .modal_window {
