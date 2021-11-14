@@ -15,7 +15,7 @@ body.dark-theme {
   }
   .modal_btn {
     color: rgb(183, 191, 194);
-    border: 2px solid rgb(94, 107, 59);
+    border: 2px solid $accentColor;
     &:hover,
     &:focus {
       color: $additionalColor;
@@ -90,7 +90,7 @@ p.dark-theme {
   height: 32px;
   border-radius: 50em;
   padding: 3px 0;
-  right: 0;
+  right: 15px;
   top: 180px;
   z-index: 1;
   // color: white;
