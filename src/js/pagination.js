@@ -87,7 +87,7 @@ async function onLoadPopular() {
     const data = await fetchData.getTrandingMovie();
     console.log(data)
     galleryList.innerHTML = '';
-    renderGallery(data, galleryList);
+    renderGallery(data, galleryList,'popular');
   } catch (err) {}
 }
 
@@ -96,7 +96,7 @@ async function onLoadQuery(){
     const data = await fetchData.getQueryMovie(localStorage.getItem('query'));
     console.log(data)
     galleryList.innerHTML = '';
-    renderGallery(data, galleryList);
+    renderGallery(data, galleryList,'popular');
   } catch (err) {}
 }
 
