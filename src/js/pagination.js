@@ -85,7 +85,6 @@ function getNewPage(e){
 async function onLoadPopular() {
   try {
     const data = await fetchData.getTrandingMovie();
-    console.log(data)
     galleryList.innerHTML = '';
     renderGallery(data, galleryList,'popular');
   } catch (err) {}
