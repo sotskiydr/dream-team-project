@@ -4,9 +4,11 @@ body.dark-theme {
   p{
     color: $additionalColor;
   }
+  // смена цвета модалки
   .modal_window{
     background: linear-gradient( 90deg, rgb(36, 33, 33) 20%, rgb(65, 45, 45) 50%, rgb(88, 64, 64) 80%)
-  }.modal_btn{
+  }
+  .modal_btn{
     color: rgb(183, 191, 194);
     border: 2px solid rgb(94, 107, 59);
     &:hover,
@@ -14,25 +16,54 @@ body.dark-theme {
       color: $additionalColor;
       border: none;
     }
+    
   }
-  .tui-page-btn {
+  // смена цвета модалки dream-team
+  .team__modal{
+    background: $secondColor;
+    p{
+      color: $mainColor;
+    }
+  }
+  .team__btn{
+    background-color: transparent;
+  }
+  .hero__link{
+    box-shadow: none;
+  }
+  //.footer__text-conteiner
+  .footer__section{
+    background: linear-gradient(90deg, rgb(22, 20, 20) 20%, rgb(68, 46, 46) 50%, rgb(22, 20, 20) 80%)
+  }
+  
+  // смена цвета пагинации(кнопок)
+  .tui-pagination .tui-page-btn {
     color: $additionalColor;
   }
+  .tui-pagination .tui-is-selected,
+.tui-pagination strong{
+  color: $additionalColor;
+}
+.tui-page-inputs .tui-page-input{
+  color: $additionalColor;
+}
   .container {
     color: $additionalColor;
   }
-  .tui-first-child{
+  .tui-first-child .tui-last-child{
     color: $additionalColor;
   }
   .tui-next{
     color: $additionalColor;
   }
   .tui-prev-is-ellip{
-    color: $additionalColor; 
-  }
-  .tui-last-child{
     color: $additionalColor;
   }
+  
+  // {
+  //   color: $additionalColor;
+  // }
+  
 }
 p.dark-theme {
   background: linear-gradient(90deg, rgb(0, 0, 0) 10%, rgb(47, 46, 46) 50%, rgb(0, 0, 0) 90%);
