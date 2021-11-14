@@ -12,12 +12,6 @@
     transition: color $transitionDuration $transitionAnim;
   }
 
-  &__text:hover,
-  &:focus &__text {
-    color: $accentColor;
-    transition: color $transitionDuration $transitionAnim;
-  }
-
   &__icon {
     stroke: $logoIconColor;
     stroke-dasharray: 102;
@@ -25,14 +19,14 @@
     animation: animate-logo-out 2s linear forwards;
   }
 
-  &__icon:hover,
-  &:focus &__icon {
+  &:hover > &__icon,
+  &:hover,
+  &:focus &__icon,
+  &:focus &__text {
+    color: $accentColor;
     animation: animate-logo-in 2s linear forwards;
+    transition: color $transitionDuration $transitionAnim;
   }
-}
-
-.logo:hover {
-  animation: animate-logo-in 2s linear forwards;
 }
 
 @keyframes animate-logo-in {
