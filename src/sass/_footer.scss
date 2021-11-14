@@ -1,7 +1,7 @@
 @media screen and (min-width: 320px) {
   .footer__section {
     display: block;
-    background-color: #f7f7f7;
+    background-color: $footerBgc;
   }
 
   .footer__text-conteiner {
@@ -14,7 +14,7 @@
     font-family: Roboto, sans-serif;
     font-size: 14px;
     line-height: 1.14;
-    color: #545454;
+    color: $secondColor;
   }
 
   .footer__text {
@@ -64,7 +64,7 @@
   .team__modal,
   .team__btn {
     position: absolute;
-    background-color: #f7f7f7;
+    background-color: $footerBgc;
   }
 
   .team__modal {
@@ -108,7 +108,7 @@
 
 .team__eye:hover,
 .team__eye:focus {
-  filter: drop-shadow(0 0 4px black);
+  filter: drop-shadow(0 0 4px $mainColor);
 }
 
 // ===========HEROES STYLE===========
@@ -136,7 +136,7 @@
   display: inline-block;
   justify-content: center;
   margin-bottom: 20px;
-  color: #ff6b08;
+  color: $accentColor;
   text-shadow: 4px 4px 2px rgba(129, 188, 204, 1);
 }
 .hero__link {
@@ -156,7 +156,7 @@
     right: 8px;
     background-image: url(../images/team/linkedn.png);
     background-size: 100%;
-    background-color: #f7f7f7;
+    background-color: $footerBgc;
     background-position: 50%;
     background-repeat: no-repeat;
   }
@@ -177,9 +177,9 @@
 
 .hero__name {
   margin-top: 25px;
-  color: black;
+  color: $mainColor;
   text-align: center;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 24px;
   // -webkit-text-stroke-width: 0.5px;
   // -webkit-text-stroke-color: #f7f7f7;
@@ -187,13 +187,13 @@
 
 .hero__position {
   margin-top: 10px;
-  color: black;
+  color: $mainColor;
   font-size: 22px;
 }
 
 .hero__city {
   margin-top: 10px;
-  color: black;
+  color: $mainColor;
   font-size: 20px;
 }
 
@@ -282,10 +282,10 @@
   margin-top: 10px;
 }
 .polaroid img {
-  border: 10px solid #fff;
-  border-bottom: 45px solid #fff;
- // -webkit-box-shadow: 3px 3px 3px #777;
- // -moz-box-shadow: 3px 3px 3px #777;
+  border: 10px solid $additionalColor;
+  border-bottom: 45px solid $additionalColor;
+  // -webkit-box-shadow: 3px 3px 3px #777;
+  // -moz-box-shadow: 3px 3px 3px #777;
   //box-shadow: 3px 3px 3px #777;
 }
 

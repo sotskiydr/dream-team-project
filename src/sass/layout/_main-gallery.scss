@@ -4,8 +4,12 @@
   font-style: italic;
   font-size: 30px;
 
+  &-text {
+    margin-bottom: 30px;
+  }
   &-img {
     margin: 0 auto;
+    border-radius: 50%;
   }
 }
 .gallery {
@@ -46,7 +50,7 @@
   width: 280px;
   height: 402px;
   padding: 50px;
-  color: rgb(58, 62, 65);
+  color: $secondColor;
   background-color: rgb(250, 250, 244);
   border-radius: 5px;
 
@@ -54,12 +58,6 @@
 
   font-size: 28px;
   line-height: 1.8;
-
-  transition: transform $transitionDuration $transitionAnim;
-
-  &:hover {
-    transform: scale(1.03);
-  }
 }
 
 .gallery__description {
@@ -114,7 +112,8 @@
     margin-bottom: 50px;
   }
 
-  .gallery__img {
+  .gallery__img,
+  .gallery__img-error {
     width: 294px;
   }
 }
@@ -125,7 +124,8 @@
     grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
   }
 
-  .gallery__img {
+  .gallery__img,
+  .gallery__img-error {
     width: 274px;
   }
 
