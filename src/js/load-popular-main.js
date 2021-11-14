@@ -1,3 +1,4 @@
+
 import API from '../js/api/API';
 const fetchData = new API();
 import { renderGallery } from './render-gallery';

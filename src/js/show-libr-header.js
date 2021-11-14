@@ -25,4 +25,5 @@ export function showLibrHeader(e) {
 function myLibraryMarkup() {
   const data = JSON.parse(localStorage.getItem('watched'));
   renderGallery(data, galleryList, 'library');
+
 }
