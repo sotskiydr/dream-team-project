@@ -215,3 +215,18 @@
     border-color: $accentColor;
   }
 }
+
+.btn__active-page{
+  text-transform: uppercase;
+  color: $additionalColor;
+  width: 130px;
+  height: 44px;
+  background: $accentColor;
+  border: 1px solid $accentColor;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  transition: background-color $transitionDuration $transitionAnim;
+  cursor: pointer;
+}
