@@ -1,11 +1,11 @@
 //Обрезаем дату ,чтобы было видно только год.
 function onCutDate(object, template) {
-  let date = "";
+  let date = '';
   if (template == 'popular') {
-    date = object.results
+    date = object.results;
   }
   if (template == 'library') {
-    date = object
+    date = object;
   }
   for (const key in date) {
     if (date[key].hasOwnProperty('release_date')) {
@@ -19,45 +19,40 @@ function onCutDate(object, template) {
 
 //Преобразуем жарнры из id в name
 function onToggleGenresData(object, genres, template) {
-  // console.log(object);
-  let data = "";
+  let data = '';
   if (template == 'popular') {
-    data = object.results
+    data = object.results;
     const genresData = genres.genres;
     for (const key in data) {
-    data[key].genre_ids = data[key].genre_ids.map(id => genresData.filter(element => element.id === id))
-      .slice(0, 3).flat();
-  }
+      data[key].genre_ids = data[key].genre_ids.map(id => genresData.filter(element => element.id === id))
+        .slice(0, 3).flat();
+    }
   }
   if (template == 'library') {
-    
-    data = object
-   
     const genresData = genres.genres;
-    // console.log(data);
     for (const key of data) {
-      // console.log(key.genres);
-    key.genres = key.genres.map(id => genresData.filter(element => element.id === id))
-      .slice(0, 3).flat();
+      const newGenres = JSON.parse(key.newGenres);
+      key.genres = newGenres;
+      key.genres = genres.map(id => genresData.filter(element => element.id === id))
+        .slice(0, 3).flat();
     }
-      // console.log(data);
   }
 
-  
-  return data
+
+  return data;
 }
 
-function addModalData(object,genres){
+function addModalData(object, genres) {
   const data = object.results;
   const genresData = genres.genres;
   for (const key in data) {
     data[key].genre_ids = data[key].genre_ids.map(id => genresData.filter(element => element.id === id)).flat();
   }
-  return data
+  return data;
 }
 
 export {
   onCutDate,
   onToggleGenresData,
-  addModalData
-}
+  addModalData,
+};

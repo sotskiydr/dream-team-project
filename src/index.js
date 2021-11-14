@@ -11,6 +11,7 @@ import './js/components/spinner';
 import './js/show-libr-header';
 import './js/markup-my-library';
 
+localStorage.setItem('page','home')
 function isGetWatched() {
   if (localStorage.getItem('watched')) return;
   localStorage.setItem('watched', '[]');

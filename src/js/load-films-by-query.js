@@ -29,7 +29,7 @@ async function onSearchSubmit(e) {
       return;
     }
     getData(options, data, id);
-    renderGallery(data, galleryList);
+    renderGallery(data, galleryList,'popular');
   } catch (err) {
     console.log('fetchDataByQuery error');
   } finally {

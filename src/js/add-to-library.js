@@ -1,9 +1,9 @@
 import refs from './refs';
 import modalMarkup from './modal.js';
 import API from './api/API';
-
+import { renderGallery } from './render-gallery'
 const fetchData = new API();
-const { modalFilmEl } = refs;
+const { modalFilmEl,galleryList } = refs;
 let currentFilm;
 
 modalFilmEl.addEventListener('click', (e) => {
@@ -70,7 +70,6 @@ async function getData(id, poster, variable) {
 
 function addToLibrary(data) {
   currentFilm = data;
-  console.log(...currentFilm.genres);
   currentFilm.newGenres = JSON.stringify(currentFilm.genres);
   // console.log(object);
   const currentMovie = localStorage.getItem('watched');
@@ -94,3 +93,4 @@ function removeToStore(data, storage) {
   const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);
   localStorage.setItem(storage, JSON.stringify(UpdateMovie));
 }
+
