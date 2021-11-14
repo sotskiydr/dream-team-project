@@ -94,7 +94,6 @@ function onChangeModalBtn(value, valueBtn) {
   if (valueBtn === 'queue') {
     const watchedBtn = document.querySelector('.queue');
     if (value === true) {
-      console.log('work');
       watchedBtn.textContent = 'REMOVE FROM QUEUE';
       watchedBtn.classList.remove('modal_btn_queue');
     }
