@@ -45,10 +45,7 @@ function onCloseModalWindow() {
 }
 
 function close() {
-  if(localStorage.getItem('page') === 'library'){
-    const data = JSON.parse(localStorage.getItem('watched'));
-    renderGallery(data,refs.galleryPosterSetModal,'storage')
-  }
+
   refs.modalBackdrop.classList.add('is-hidden');
   refs.galleryBox.innerHTML = '';
 }
