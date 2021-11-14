@@ -53,7 +53,6 @@ modalFilmEl.addEventListener('click', (e) => {
 async function getData(id, poster, variable) {
   const getData = await fetchData.getDescriptionMovie(id).then(r => r);
   getData.poster_path = poster;
-  console.log(getData);
   if (variable === 'watched') {
     addToLibrary(getData);
   }
@@ -71,7 +70,6 @@ async function getData(id, poster, variable) {
 
 function addToLibrary(data) {
   currentFilm = data;
-  console.log(currentFilm);
   const currentMovie = localStorage.getItem('watched');
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
@@ -88,7 +86,6 @@ function addToQueue(data) {
 
 function removeToStore(data, storage) {
   currentFilm = data;
-  console.log(currentFilm);
   const currentMovie = localStorage.getItem(storage);
   const NextMovie = JSON.parse(currentMovie);
   const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);

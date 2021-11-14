@@ -11,7 +11,7 @@
             {{else if name}}
             <p class="gallery__title modal">{{title}}</p>
             {{/if}}
-            <div  class='gallery__description-text'>
+            <div  class='gallery__description-text modal'>
                 <ul class='gallery__description-list modal' id={{id}} data-img={{poster_path}}>{{#if genre_ids}}{{#each genre_ids}}
                     <li class='gallery__description-item modal'>{{name}}</li>{{/each}}{{else}}<p>No genres</p>{{/if}}&nbsp;|
                 </ul>

@@ -83,7 +83,6 @@ function onChangeModalBtn(value, valueBtn) {
   if (valueBtn === 'watched') {
     const watchedBtn = document.querySelector('.watched');
     if (value === true) {
-      console.log('work');
       watchedBtn.textContent = 'REMOVE FROM WATCHED';
       watchedBtn.classList.remove('modal_btn_wotched');
     }
