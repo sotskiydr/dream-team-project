@@ -1,3 +1,4 @@
+
 import API from '../js/api/API';
 const fetchData = new API();
 import { renderGallery } from './render-gallery';
@@ -24,6 +25,7 @@ onLoadPopular();
 logoEl.addEventListener('click', onLoadPopular);
 homeLink.addEventListener('click', e => {
   e.preventDefault();
+  localStorage.setItem('page','home')
   galleryList.innerHTML = "";
   headerEl.classList.remove('libr-header-img');
   headerEl.classList.add('main-header-img');

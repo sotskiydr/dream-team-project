@@ -1,15 +1,17 @@
+import { renderGallery } from './render-gallery';
 const refs = {
   'galleryPosterSetModal': document.querySelector('.js-gallery'),
   'closeBtn': document.querySelector('.modal__button_close'),
   'modalBackdrop': document.querySelector('.modal_backdrop'),
   'galleryBox': document.querySelector('.modal-markup'),
+
 };
 
 import genresData from './data/genresData.json';
 import { onCutDate, addModalData } from './components/newData';
 import modalMarkup from '../templates/modal.hbs';
 import API from '../js/api/API';
-import getID from './add-to-library';
+
 
 const fetchData = new API();
 
@@ -27,6 +29,7 @@ function open(e) {
 }
 
 function onCloseModalWindow() {
+
   refs.closeBtn.addEventListener('click', close);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -38,9 +41,14 @@ function onCloseModalWindow() {
       close();
     }
   });
+
 }
 
 function close() {
+  if(localStorage.getItem('page') === 'library'){
+    const data = JSON.parse(localStorage.getItem('watched'));
+    renderGallery(data,refs.galleryPosterSetModal,'storage')
+  }
   refs.modalBackdrop.classList.add('is-hidden');
   refs.galleryBox.innerHTML = '';
 }
