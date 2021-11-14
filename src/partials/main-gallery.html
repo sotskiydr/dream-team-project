@@ -1,6 +1,11 @@
-<main>
+<main class="main">
   <div class="container">
     <h1 class="hidden">Filmoteka</h1>
+    <div class="main__warning hidden">
+      <p>Oops... You don't have any movies in library!</p>
+      <img class="main__warning-img" src="./images/clapper.gif" alt="Filmoteka" />
+    </div>
+
     <include src="./partials/spinner.html"></include>
     <ul class="gallery js-gallery"></ul>
   </div>

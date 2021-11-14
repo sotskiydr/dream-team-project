@@ -1,3 +1,13 @@
+.main__warning {
+  text-align: center;
+  padding-top: 60px;
+  font-style: italic;
+  font-size: 30px;
+
+  &-img {
+    margin: 0 auto;
+  }
+}
 .gallery {
   display: grid;
   width: 280px;

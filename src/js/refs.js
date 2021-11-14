@@ -5,6 +5,7 @@ export default {
     librLink: document.querySelector('.js-lib'),
     formEl: document.querySelector('.header__input_wrapper'),
     librButtonsDiv: document.querySelector('.header__library_btm'),
+    mainWarning: document.querySelector('.main__warning'),
     galleryList: document.querySelector('.js-gallery'),
     inputQuery: document.querySelector('.header__input'),
     inputForm: document.querySelector('.header__input_wrapper'),
