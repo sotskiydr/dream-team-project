@@ -14,5 +14,6 @@ export default {
     preloader: document.getElementById('page-preloader'),
     modalFilmEl: document.querySelector('.modal-markup'),
     tuiPag: document.querySelector('.tui-pagination'),
-
+    watchedBtn:document.querySelector('.watched-btn'),
+    queueBtn:document.querySelector('.queue-btn')
 }

@@ -3,7 +3,7 @@ import modalMarkup from './modal.js';
 import API from './api/API';
 import { renderGallery } from './render-gallery'
 const fetchData = new API();
-const { modalFilmEl,galleryList } = refs;
+const { modalFilmEl,galleryList, mainWarning } = refs;
 let currentFilm;
 
 modalFilmEl.addEventListener('click', (e) => {
@@ -14,6 +14,7 @@ modalFilmEl.addEventListener('click', (e) => {
     // removeToStore('watched')
     e.target.classList.add('modal_btn_wotched');
     e.target.textContent = 'ADD TO WATCH';
+    addWarningDiv()
     return;
   }
   if (!e.target.classList.contains('modal_btn_queue') && e.target.classList.contains('queue')) {
@@ -22,6 +23,7 @@ modalFilmEl.addEventListener('click', (e) => {
     getData(id, posterImg, 'remove-queue');
     e.target.classList.add('modal_btn_queue');
     e.target.textContent = 'ADD TO QUEUE';
+    addWarningDiv()
     return;
   }
   if (e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
@@ -71,7 +73,6 @@ async function getData(id, poster, variable) {
 function addToLibrary(data) {
   currentFilm = data;
   currentFilm.newGenres = JSON.stringify(currentFilm.genres);
-  // console.log(object);
   const currentMovie = localStorage.getItem('watched');
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
@@ -80,6 +81,7 @@ function addToLibrary(data) {
 
 function addToQueue(data) {
   currentFilm = data;
+  currentFilm.newGenres = JSON.stringify(currentFilm.genres);
   const currentMovie = localStorage.getItem('queue');
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
@@ -93,10 +95,17 @@ function removeToStore(data, storage) {
   const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);
   localStorage.setItem(storage, JSON.stringify(UpdateMovie));
   if(localStorage.getItem('page') === 'library'){
-    console.log('work')
     galleryList.innerHTML = '';
     const data = JSON.parse(localStorage.getItem('watched'));
     renderGallery(data,galleryList,'library')
   }
 }
 
+function addWarningDiv(){
+  const page = localStorage.getItem('page')
+  if (page === 'library' && galleryList.childNodes.length <= 2) {
+    console.log('work')
+    mainWarning.classList.remove('hidden');
+  }
+  console.log(galleryList.childNodes.length)
+}
