@@ -14,7 +14,6 @@ watchedBtn.addEventListener('click', (e) => {
   removeStyle(queueBtn)
   addStyle(watchedBtn)
   if (page === 'library' && JSON.parse(localStorage.getItem('watched')).length > 0) {
-    console.log('here is work')
     mainWarning.classList.add('hidden');
   }else{
     mainWarning.classList.remove('hidden');

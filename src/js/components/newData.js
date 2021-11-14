@@ -30,15 +30,11 @@ function onToggleGenresData(object, genres, template) {
   }
   if (template == 'library') {
     const genresData = genres.genres;
-    for (const key of data) {
-      const newGenres = JSON.parse(key.newGenres);
-      key.genres = newGenres;
-      key.genres = genres.map(id => genresData.filter(element => element.id === id))
-        .slice(0, 3).flat();
+    data = object
+    for (const key in data) {
+      data[key].genres = data[key].genres.map(id => genresData.filter(element => element.id === id.id)).slice(0, 3).flat();
     }
   }
-
-
   return data;
 }
 
