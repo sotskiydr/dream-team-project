@@ -45,7 +45,6 @@ function onCloseModalWindow() {
 }
 
 function close() {
-
   refs.modalBackdrop.classList.add('is-hidden');
   refs.galleryBox.innerHTML = '';
 }
