@@ -12,7 +12,6 @@ export  function renderGallery(data, place, template) {
   }
   if (template == 'library') {
     markup = libraryMarkup(data);
-    console.log(data)
   }
   place.insertAdjacentHTML('beforeend', markup);
   const imgGallery = place.children;
