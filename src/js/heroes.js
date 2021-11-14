@@ -7,6 +7,7 @@ import photoEugeniya from "../images/team/eugeniya.jpg";
 import photoNatasha from "../images/team/natasha.jpg";
 import photoAndrii from "../images/team/andrii.jpg";
 import photoAleks from "../images/team/aleks.jpg";
+import photoOleg from "../images/team/oleg.jpg";
 
 
 
@@ -61,10 +62,10 @@ export default [
        
     {
         name: 'Oleg',
-        photo: photoman,
+        photo: photoOleg,
         position: 'Developer',
         linkedin: 'https://www.linkedin.com/',
-        city: 'Ukraine',
+        city: 'Cherkasy',
     },
        
     {
