@@ -96,7 +96,7 @@ function removeToStore(data, storage) {
   localStorage.setItem(storage, JSON.stringify(UpdateMovie));
   if(localStorage.getItem('page') === 'library'){
     galleryList.innerHTML = '';
-    const data = JSON.parse(localStorage.getItem('watched'));
+    const data = JSON.parse(localStorage.getItem(storage));
     renderGallery(data,galleryList,'library')
   }
 }
