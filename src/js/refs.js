@@ -14,4 +14,5 @@ export default {
     preloader: document.getElementById('page-preloader'),
     modalFilmEl: document.querySelector('.modal-markup'),
     tuiPag: document.querySelector('.tui-pagination'),
+
 }

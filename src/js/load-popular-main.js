@@ -11,7 +11,7 @@ export default async function onLoadPopular() {
     const data = await fetchData.getTrandingMovie();
     // const id = 'popular';
     getData(options, data);
-    renderGallery(data, galleryList);
+    renderGallery(data, galleryList, 'popular');
   } catch (err) {
   } finally {
     removeSpinner();

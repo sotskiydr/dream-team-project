@@ -70,6 +70,9 @@ async function getData(id, poster, variable) {
 
 function addToLibrary(data) {
   currentFilm = data;
+  console.log(...currentFilm.genres);
+  currentFilm.newGenres = JSON.stringify(currentFilm.genres);
+  // console.log(object);
   const currentMovie = localStorage.getItem('watched');
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
