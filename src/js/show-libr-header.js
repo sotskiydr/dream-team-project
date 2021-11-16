@@ -69,19 +69,23 @@ export function showLibrHeader(e) {
   }else if (page === 'library' && JSON.parse(localStorage.getItem('queue')).length < 1) {
     console.log('work1');
     myLibraryMarkup('watched');
-    watchedBtn.disabled = true;
+    watchedBtn.disabled = false;
     addStyle(watchedBtn);
-    queueBtn.disabled = false;
+    queueBtn.disabled = true;
     return;
   }
   myLibraryMarkup('watched');
   addStyle(watchedBtn);
+  watchedBtn.disabled = true;
+  queueBtn.disabled = false;
+  // removeStyle(watchedBtn)
 }
 
 function myLibraryMarkup(id) {
   const data = JSON.parse(localStorage.getItem(id));
   galleryList.innerHTML = '';
   renderGallery(data, galleryList, 'library');
+  console.log(data)
   if (galleryList.textContent === '') {
     mainWarning.classList.remove('hidden');
   }

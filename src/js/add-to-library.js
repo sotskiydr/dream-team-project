@@ -112,7 +112,7 @@ function removeToStore(data, storage) {
 function addWarningDiv() {
   const page = localStorage.getItem('page');
   console.log(galleryList.childNodes.length)
-  if (page === 'library' && galleryList.childNodes.length === 2) {
+  if (page === 'library' && galleryList === '') {
     mainWarning.classList.remove('hidden');
   }
 }
