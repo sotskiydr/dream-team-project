@@ -19,7 +19,6 @@ const {
   watchedBtn,
   queueBtn
 } = refs;
-import { getData, options } from './pagination';
 const { success, error } = require('@pnotify/core');
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
