@@ -3,6 +3,7 @@ const fetchData = new API();
 import { renderGallery } from './render-gallery';
 import refs from './refs';
 import { removeSpinner } from './components/spinner';
+
 import { getData, options } from './pagination';
 import {removeStyle} from './show-libr-header'
 const {
@@ -19,16 +20,26 @@ const {
   watchedBtn,
   queueBtn,
 } = refs;
+import { getData, options } from './pagination';
+const { success, error } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
 
 export default async function onLoadPopular() {
   try {
     homeLink.classList.add('current');
     librLink.classList.remove('current');
     const data = await fetchData.getTrandingMovie();
-    // const id = 'popular';
     getData(options, data);
     renderGallery(data, galleryList, 'popular');
   } catch (err) {
+    console.log('error');
+    if (data) {
+      error({
+            text: "CRITICAL ERROR!",
+            delay: 1000,
+        });
+    }
   } finally {
     removeSpinner();
   }
@@ -53,4 +64,5 @@ homeLink.addEventListener('click', e => {
   tuiPag.style.display = 'block';
   removeStyle(watchedBtn);
   removeStyle(queueBtn);
+  mainWarning.classList.add('hidden');
 });
