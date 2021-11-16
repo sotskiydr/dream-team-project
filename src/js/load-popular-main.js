@@ -22,7 +22,6 @@ const {
 
 export default async function onLoadPopular() {
   try {
-    console.log('logo pressed');
     homeLink.classList.add('current');
     librLink.classList.remove('current');
     const data = await fetchData.getTrandingMovie();
