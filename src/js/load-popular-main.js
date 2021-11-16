@@ -16,7 +16,7 @@ const {
   mainWarning,
   tuiPag,
   watchedBtn,
-  // queueBtn
+  queueBtn
 } = refs;
 
 export default async function onLoadPopular() {
@@ -50,6 +50,6 @@ homeLink.addEventListener('click', e => {
   onLoadPopular();
   tuiPag.style.display = 'block';
   removeStyle(watchedBtn);
+  removeStyle(queueBtn);
   mainWarning.classList.add('hidden');
-  // removeStyle(queueBtn);
 });

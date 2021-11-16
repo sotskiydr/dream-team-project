@@ -23,10 +23,10 @@ watchedBtn.addEventListener('click', e => {
   watchedBtn.disabled = true;
   removeStyle(queueBtn);
   addStyle(watchedBtn);
-  if (page === 'library' && JSON.parse(localStorage.getItem('watched')).length > 0) {
-    mainWarning.classList.add('hidden');
-  } else {
+  if (galleryList.textContent === '') {
     mainWarning.classList.remove('hidden');
+  } else {
+    mainWarning.classList.add('hidden');
   }
 });
 //on press queue
@@ -36,10 +36,10 @@ queueBtn.addEventListener('click', e => {
   queueBtn.disabled = true;
   addStyle(queueBtn);
   removeStyle(watchedBtn);
-  if (page === 'library' && JSON.parse(localStorage.getItem('queue')).length > 0) {
-    mainWarning.classList.add('hidden');
-  } else {
+  if (galleryList.textContent === '') {
     mainWarning.classList.remove('hidden');
+  } else {
+    mainWarning.classList.add('hidden');
   }
 });
 
@@ -59,12 +59,19 @@ export function showLibrHeader(e) {
   tuiPag.style.display = 'none';
   // console.log(JSON.parse(localStorage.getItem('watched')).length)
 
-  if (page === 'library' && JSON.parse(localStorage.getItem('watched')).length < 1) {
-    console.log('work1');
+  if (page === 'library' && JSON.parse(localStorage.getItem('watched')).length < 1){
+    console.log('work2')
     myLibraryMarkup('queue');
     watchedBtn.disabled = false;
     addStyle(queueBtn);
     queueBtn.disabled = true;
+    return;
+  }else if (page === 'library' && JSON.parse(localStorage.getItem('queue')).length < 1) {
+    console.log('work1');
+    myLibraryMarkup('watched');
+    watchedBtn.disabled = true;
+    addStyle(watchedBtn);
+    queueBtn.disabled = false;
     return;
   }
   myLibraryMarkup('watched');
@@ -75,7 +82,7 @@ function myLibraryMarkup(id) {
   const data = JSON.parse(localStorage.getItem(id));
   galleryList.innerHTML = '';
   renderGallery(data, galleryList, 'library');
-  if (page === 'library' && galleryList.childNodes.length === 0) {
+  if (galleryList.textContent === '') {
     mainWarning.classList.remove('hidden');
   }
 }
