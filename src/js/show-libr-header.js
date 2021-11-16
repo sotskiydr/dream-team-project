@@ -1,34 +1,44 @@
 import refs from './refs';
 import { renderGallery } from './render-gallery';
 
-const { headerEl, librLink, formEl, librButtonsDiv, mainWarning, galleryList, tuiPag, watchedBtn, queueBtn } = refs;
+const {
+  headerEl,
+  homeLink,
+  librLink,
+  formEl,
+  librButtonsDiv,
+  mainWarning,
+  galleryList,
+  tuiPag,
+  watchedBtn,
+  queueBtn,
+} = refs;
 const page = localStorage.getItem('page');
-
 
 librLink.addEventListener('click', showLibrHeader);
 //on press watched
-watchedBtn.addEventListener('click', (e) => {
+watchedBtn.addEventListener('click', e => {
   myLibraryMarkup('watched');
   queueBtn.disabled = false;
   watchedBtn.disabled = true;
-  removeStyle(queueBtn)
-  addStyle(watchedBtn)
+  removeStyle(queueBtn);
+  addStyle(watchedBtn);
   if (page === 'library' && JSON.parse(localStorage.getItem('watched')).length > 0) {
     mainWarning.classList.add('hidden');
-  }else{
+  } else {
     mainWarning.classList.remove('hidden');
   }
 });
 //on press queue
-queueBtn.addEventListener('click', (e) => {
+queueBtn.addEventListener('click', e => {
   myLibraryMarkup('queue');
   watchedBtn.disabled = false;
   queueBtn.disabled = true;
-  addStyle(queueBtn)
-  removeStyle(watchedBtn)
+  addStyle(queueBtn);
+  removeStyle(watchedBtn);
   if (page === 'library' && JSON.parse(localStorage.getItem('queue')).length > 0) {
     mainWarning.classList.add('hidden');
-  }else{
+  } else {
     mainWarning.classList.remove('hidden');
   }
 });
@@ -39,7 +49,8 @@ export function showLibrHeader(e) {
   if (!headerEl.classList.contains('main-header-img')) {
     return;
   }
-
+  homeLink.classList.remove('current');
+  librLink.classList.add('current');
   headerEl.classList.remove('main-header-img');
   headerEl.classList.add('libr-header-img');
   formEl.style.display = 'none';
@@ -47,16 +58,17 @@ export function showLibrHeader(e) {
   galleryList.innerHTML = '';
   tuiPag.style.display = 'none';
   // console.log(JSON.parse(localStorage.getItem('watched')).length)
+
   if (page === 'library' && JSON.parse(localStorage.getItem('watched')).length < 1) {
     console.log('work1');
     myLibraryMarkup('queue');
     watchedBtn.disabled = false;
-    addStyle(queueBtn)
+    addStyle(queueBtn);
     queueBtn.disabled = true;
     return;
   }
   myLibraryMarkup('watched');
-  addStyle(watchedBtn)
+  addStyle(watchedBtn);
 }
 
 function myLibraryMarkup(id) {
@@ -68,14 +80,13 @@ function myLibraryMarkup(id) {
   }
 }
 
-function addStyle (elem){
+function addStyle(elem) {
   elem.style.background = '#ff6b08';
   elem.style.border = '1px solid #ff6b08';
-  return false
+  return false;
 }
-function removeStyle (elem){
+function removeStyle(elem) {
   elem.style.background = 'transparent';
   elem.style.border = '1px solid white';
-  return false
+  return false;
 }
-
