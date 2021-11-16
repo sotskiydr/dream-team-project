@@ -26,6 +26,13 @@ function open(e) {
   refs.modalBackdrop.classList.remove('is-hidden');
   renderModal(cardId, dataImg);
   onCloseModalWindow();
+
+  refs.modalBackdrop.addEventListener('wheel', (e)=> {
+    console.log("scroll");
+    e.preventDefault();
+},
+{passive:false}
+);
 }
 
 function onCloseModalWindow() {

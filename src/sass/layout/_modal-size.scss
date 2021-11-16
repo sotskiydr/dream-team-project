@@ -5,6 +5,10 @@
     display: flex;
   }
 }
+.scroll{
+ 
+  display: flex;
+}
 .modal_backdrop {
   position: fixed;
   top: 0;
@@ -15,7 +19,7 @@
   transition: opacity $transitionDuration $transitionAnim,
     visibility $transitionDuration $transitionAnim;
   z-index: 3;
-  overflow-y: scroll;
+  
 
   transition: all $transitionDuration linear $transitionDuration;
 
