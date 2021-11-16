@@ -7,6 +7,8 @@ const fetchData = new API();
 const { modalFilmEl, galleryList, mainWarning,watchedBtn,queueBtn } = refs;
 let currentFilm;
 
+
+
 modalFilmEl.addEventListener('click', (e) => {
   if (!e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
     const id = e.target.id;
@@ -110,9 +112,15 @@ function removeToStore(data, storage) {
 }
 
 function addWarningDiv() {
+  const numWatched = JSON.parse(localStorage.getItem('watched')).length;
+  const numQueue = JSON.parse(localStorage.getItem('queue')).length;
   const page = localStorage.getItem('page');
-  console.log(galleryList.childNodes.length)
-  if (page === 'library' && galleryList === '') {
+  if (page === 'library' && galleryList.textContent === '') {
     mainWarning.classList.remove('hidden');
   }
+  // else if (page === 'library' && numStorage === 1){
+  //   mainWarning.classList.remove('hidden');
+  // }else if (page === 'library' && numQueue === 1){
+  //   mainWarning.classList.remove('hidden');
+  // }
 }

@@ -66,13 +66,6 @@ export function showLibrHeader(e) {
     addStyle(queueBtn);
     queueBtn.disabled = true;
     return;
-  }else if (page === 'library' && JSON.parse(localStorage.getItem('queue')).length < 1) {
-    console.log('work1');
-    myLibraryMarkup('watched');
-    watchedBtn.disabled = false;
-    addStyle(watchedBtn);
-    queueBtn.disabled = true;
-    return;
   }
   myLibraryMarkup('watched');
   addStyle(watchedBtn);
@@ -85,8 +78,7 @@ function myLibraryMarkup(id) {
   const data = JSON.parse(localStorage.getItem(id));
   galleryList.innerHTML = '';
   renderGallery(data, galleryList, 'library');
-  console.log(data)
-  if (galleryList.textContent === '') {
+  if(galleryList.textContent === ''){
     mainWarning.classList.remove('hidden');
   }
 }
