@@ -16,7 +16,7 @@ const {
   mainWarning,
   tuiPag,
   watchedBtn,
-  queueBtn
+  // queueBtn
 } = refs;
 
 export default async function onLoadPopular() {
@@ -25,7 +25,6 @@ export default async function onLoadPopular() {
     homeLink.classList.add('current');
     librLink.classList.remove('current');
     const data = await fetchData.getTrandingMovie();
-    // const id = 'popular';
     getData(options, data);
     renderGallery(data, galleryList, 'popular');
   } catch (err) {
@@ -51,5 +50,6 @@ homeLink.addEventListener('click', e => {
   onLoadPopular();
   tuiPag.style.display = 'block';
   removeStyle(watchedBtn);
-  removeStyle(queueBtn);
+  mainWarning.classList.add('hidden');
+  // removeStyle(queueBtn);
 });
