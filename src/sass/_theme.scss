@@ -4,6 +4,9 @@ body.dark-theme {
   p {
     color: $additionalColor;
   }
+  .header__input_msg_error {
+    color: $errorMessageColor;
+  }
   // смена цвета модалки
   .modal_window {
     background: linear-gradient(

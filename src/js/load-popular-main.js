@@ -14,11 +14,12 @@ const {
   librButtonsDiv,
   mainWarning,
   tuiPag,
+  errorMsg,
 } = refs;
 
 export default async function onLoadPopular() {
   try {
-    console.log('logo pressed')
+    console.log('logo pressed');
     homeLink.classList.add('current');
     librLink.classList.remove('current');
     const data = await fetchData.getTrandingMovie();
@@ -37,6 +38,7 @@ onLoadPopular();
 logoEl.addEventListener('click', onLoadPopular);
 homeLink.addEventListener('click', e => {
   e.preventDefault();
+  errorMsg.innerHTML = '';
   localStorage.setItem('page', 'home');
   galleryList.innerHTML = '';
   headerEl.classList.remove('libr-header-img');
