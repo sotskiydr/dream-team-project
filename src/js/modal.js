@@ -6,6 +6,9 @@ const refs = {
   'galleryBox': document.querySelector('.modal-markup'),
 
 };
+const { success, error } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
 
 import genresData from './data/genresData.json';
 import { onCutDate, addModalData } from './components/newData';
@@ -60,6 +63,11 @@ async function renderModal(cardId, dataImg) {
     toCheckIdInStorage(cardId);
   } catch (err) {
     console.log('error');
+
+       error({
+            text: "CRITICAL ERROR!",
+            delay: 1000,
+        });
   }
 }
 

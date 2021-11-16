@@ -5,7 +5,10 @@ import { renderGallery } from './render-gallery';
 import refs from './refs';
 import { removeSpinner } from './components/spinner';
 const { headerEl, galleryList, logoEl, homeLink, formEl, librButtonsDiv, mainWarning, tuiPag} = refs;
-import {getData , options} from './pagination';
+import { getData, options } from './pagination';
+const { success, error } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
 
 export default async function onLoadPopular() {
   try {
@@ -14,6 +17,13 @@ export default async function onLoadPopular() {
     getData(options, data);
     renderGallery(data, galleryList, 'popular');
   } catch (err) {
+    console.log('error');
+    if (data) {
+      error({
+            text: "CRITICAL ERROR!",
+            delay: 1000,
+        });
+    }
   } finally {
     removeSpinner();
   }
