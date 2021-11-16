@@ -5,6 +5,9 @@ body.dark-theme {
     color: $additionalColor;
   }
 
+  .header__input_msg_error {
+    color: $errorMessageColor;
+
   .theme-switch__icon {
     fill: $additionalColor;
   }

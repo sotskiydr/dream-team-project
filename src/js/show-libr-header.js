@@ -12,6 +12,7 @@ const {
   tuiPag,
   watchedBtn,
   queueBtn,
+  errorMsg,
 } = refs;
 const page = localStorage.getItem('page');
 
@@ -49,6 +50,7 @@ export function showLibrHeader(e) {
   if (!headerEl.classList.contains('main-header-img')) {
     return;
   }
+  errorMsg.innerHTML = '';
   homeLink.classList.remove('current');
   librLink.classList.add('current');
   headerEl.classList.remove('main-header-img');

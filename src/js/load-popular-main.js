@@ -16,8 +16,9 @@ const {
   librButtonsDiv,
   mainWarning,
   tuiPag,
+  errorMsg,
   watchedBtn,
-  queueBtn
+  queueBtn,
 } = refs;
 const { success, error } = require('@pnotify/core');
 import '@pnotify/core/dist/BrightTheme.css';
@@ -25,7 +26,6 @@ import '@pnotify/core/dist/PNotify.css';
 
 export default async function onLoadPopular() {
   try {
-    console.log('logo pressed')
     homeLink.classList.add('current');
     librLink.classList.remove('current');
     const data = await fetchData.getTrandingMovie();
@@ -50,6 +50,7 @@ onLoadPopular();
 logoEl.addEventListener('click', onLoadPopular);
 homeLink.addEventListener('click', e => {
   e.preventDefault();
+  errorMsg.innerHTML = '';
   localStorage.setItem('page', 'home');
   galleryList.innerHTML = '';
   headerEl.classList.remove('libr-header-img');
