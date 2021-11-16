@@ -15,7 +15,7 @@
 
       <ul class="header__nav_links">
         <li class="header__nav_list_item">
-          <a href="./index.html" class="header__home_link js-home site-nav__link">home</a>
+          <a href="./index.html" class="header__home_link js-home site-nav__link current">home</a>
         </li>
         <li class="header__nav_list_item">
           <a href="./index.html" class="header__lib_link js-lib site-nav__link">my library</a>
@@ -36,16 +36,24 @@
       <button class="header__library_btm_item watched-btn" disabled>Watched</button>
       <button class="header__library_btm_item queue-btn">Queue</button>
     </div>
-    <div class="theme-switch__control">
-      <input
-        class="theme-switch__toggle"
-        type="checkbox"
-        name="theme"
-        id="theme-switch-toggle"
-        aria-label="Переключить между тёмной и светлой темой"
-      />
-      <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label>
-      <div aria-hidden="true" class="theme-switch__marker"></div>
+    <div class="theme-switch">   
+      <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+        <use href="../src/images/sprite.svg#sun"></use>
+      </svg>
+      <div class="theme-switch__control">
+        <input
+          class="theme-switch__toggle"
+          type="checkbox"
+          name="theme"
+          id="theme-switch-toggle"
+          aria-label="Переключить между тёмной и светлой темой"
+        />
+        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label>
+        <div aria-hidden="true" class="theme-switch__marker"></div>
+      </div>
+      <svg class="theme-switch__icon" role="img" aria-label="Иконка луны">
+        <use href="../src/images/sprite.svg#moon"></use>
+      </svg>
     </div>
   </div>
 </header>

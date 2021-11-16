@@ -1,10 +1,13 @@
 import refs from './refs';
 import modalMarkup from './modal.js';
 import API from './api/API';
-import { renderGallery } from './render-gallery'
+import { renderGallery } from './render-gallery';
+
 const fetchData = new API();
-const { modalFilmEl,galleryList, mainWarning } = refs;
+const { modalFilmEl, galleryList, mainWarning,watchedBtn,queueBtn } = refs;
 let currentFilm;
+
+
 
 modalFilmEl.addEventListener('click', (e) => {
   if (!e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
@@ -14,7 +17,7 @@ modalFilmEl.addEventListener('click', (e) => {
     // removeToStore('watched')
     e.target.classList.add('modal_btn_wotched');
     e.target.textContent = 'ADD TO WATCH';
-    addWarningDiv()
+    addWarningDiv();
     return;
   }
   if (!e.target.classList.contains('modal_btn_queue') && e.target.classList.contains('queue')) {
@@ -23,7 +26,7 @@ modalFilmEl.addEventListener('click', (e) => {
     getData(id, posterImg, 'remove-queue');
     e.target.classList.add('modal_btn_queue');
     e.target.textContent = 'ADD TO QUEUE';
-    addWarningDiv()
+    addWarningDiv();
     return;
   }
   if (e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
@@ -94,16 +97,30 @@ function removeToStore(data, storage) {
   const NextMovie = JSON.parse(currentMovie);
   const UpdateMovie = NextMovie.filter(e => e.id !== currentFilm.id);
   localStorage.setItem(storage, JSON.stringify(UpdateMovie));
-  if(localStorage.getItem('page') === 'library'){
+  if (localStorage.getItem('page') === 'library') {
+    let getItem = '';
+    if(watchedBtn.classList.contains('active-btn')){
+      getItem = 'watched';
+    }
+    if(queueBtn.classList.contains('active-btn')){
+      getItem = 'queue'
+    }
+    const data = JSON.parse(localStorage.getItem(getItem));
     galleryList.innerHTML = '';
-    const data = JSON.parse(localStorage.getItem(storage));
-    renderGallery(data,galleryList,'library')
+    renderGallery(data, galleryList, 'library');
   }
 }
 
-function addWarningDiv(){
-  const page = localStorage.getItem('page')
-  if (page === 'library' && galleryList.childNodes.length <= 2) {
+function addWarningDiv() {
+  const numWatched = JSON.parse(localStorage.getItem('watched')).length;
+  const numQueue = JSON.parse(localStorage.getItem('queue')).length;
+  const page = localStorage.getItem('page');
+  if (page === 'library' && galleryList.textContent === '') {
     mainWarning.classList.remove('hidden');
   }
+  // else if (page === 'library' && numStorage === 1){
+  //   mainWarning.classList.remove('hidden');
+  // }else if (page === 'library' && numQueue === 1){
+  //   mainWarning.classList.remove('hidden');
+  // }
 }
