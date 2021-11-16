@@ -17,7 +17,7 @@ modalFilmEl.addEventListener('click', (e) => {
     // removeToStore('watched')
     e.target.classList.add('modal_btn_wotched');
     e.target.textContent = 'ADD TO WATCH';
-    addWarningDiv();
+    // addWarningDiv();
     return;
   }
   if (!e.target.classList.contains('modal_btn_queue') && e.target.classList.contains('queue')) {
@@ -26,7 +26,7 @@ modalFilmEl.addEventListener('click', (e) => {
     getData(id, posterImg, 'remove-queue');
     e.target.classList.add('modal_btn_queue');
     e.target.textContent = 'ADD TO QUEUE';
-    addWarningDiv();
+    // addWarningDiv();
     return;
   }
   if (e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
@@ -118,15 +118,8 @@ function removeToStore(data, storage) {
 }
 
 function addWarningDiv() {
-  const numWatched = JSON.parse(localStorage.getItem('watched')).length;
-  const numQueue = JSON.parse(localStorage.getItem('queue')).length;
   const page = localStorage.getItem('page');
   if (page === 'library' && galleryList.textContent === '') {
     mainWarning.classList.remove('hidden');
   }
-  // else if (page === 'library' && numStorage === 1){
-  //   mainWarning.classList.remove('hidden');
-  // }else if (page === 'library' && numQueue === 1){
-  //   mainWarning.classList.remove('hidden');
-  // }
 }
