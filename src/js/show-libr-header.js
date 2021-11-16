@@ -86,7 +86,7 @@ function addStyle(elem) {
   elem.classList.add('active-btn');
   return false;
 }
-function removeStyle(elem) {
+export function removeStyle(elem) {
   elem.style.background = 'transparent';
   elem.style.border = '1px solid white';
   elem.classList.remove('active-btn');

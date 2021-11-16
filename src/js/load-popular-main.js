@@ -4,6 +4,7 @@ import { renderGallery } from './render-gallery';
 import refs from './refs';
 import { removeSpinner } from './components/spinner';
 import { getData, options } from './pagination';
+import {removeStyle} from './show-libr-header'
 const {
   headerEl,
   galleryList,
@@ -14,6 +15,8 @@ const {
   librButtonsDiv,
   mainWarning,
   tuiPag,
+  watchedBtn,
+  queueBtn
 } = refs;
 
 export default async function onLoadPopular() {
@@ -47,4 +50,6 @@ homeLink.addEventListener('click', e => {
   mainWarning.classList.add('hidden');
   onLoadPopular();
   tuiPag.style.display = 'block';
+  removeStyle(watchedBtn);
+  removeStyle(queueBtn);
 });
