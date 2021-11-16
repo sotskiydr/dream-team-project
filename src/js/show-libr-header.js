@@ -83,10 +83,12 @@ function myLibraryMarkup(id) {
 function addStyle(elem) {
   elem.style.background = '#ff6b08';
   elem.style.border = '1px solid #ff6b08';
+  elem.classList.add('active-btn');
   return false;
 }
 function removeStyle(elem) {
   elem.style.background = 'transparent';
   elem.style.border = '1px solid white';
+  elem.classList.remove('active-btn');
   return false;
 }
