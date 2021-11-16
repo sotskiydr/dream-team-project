@@ -27,7 +27,7 @@ function adaptiveMakup (options){
   if(widthContainer === 768){
     options.visiblePages = 7;
   }else if(widthContainer === 320){
-    options.visiblePages = 4;
+    options.visiblePages = 3;
   }
 }
 
