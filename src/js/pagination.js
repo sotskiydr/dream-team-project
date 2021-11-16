@@ -4,6 +4,9 @@ import Pagination from 'tui-pagination';
 import { renderGallery }  from './render-gallery';
 import refs from './refs'
 const { galleryList } = refs;
+const { success, error } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
 
 async function getData(options,data,id) {
   try {
@@ -13,7 +16,7 @@ async function getData(options,data,id) {
     options.totalItems = data.total_pages;
     adaptiveMakup(options)
   } catch (err) {
-    console.log('error')
+    console.log('error');
   }
   createNewCopy(options)
 }
@@ -87,7 +90,9 @@ async function onLoadPopular() {
     const data = await fetchData.getTrandingMovie();
     galleryList.innerHTML = '';
     renderGallery(data, galleryList,'popular');
-  } catch (err) {}
+  } catch (err) {
+    console.log('error');
+  }
 }
 
 async function onLoadQuery(){
@@ -96,7 +101,9 @@ async function onLoadQuery(){
     console.log(data)
     galleryList.innerHTML = '';
     renderGallery(data, galleryList,'popular');
-  } catch (err) {}
+  } catch (err) {
+    console.log('error');
+  }
 }
 
 // getDataPopular(options)

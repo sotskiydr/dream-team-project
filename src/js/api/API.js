@@ -1,3 +1,7 @@
+const { success, error } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
+
 const KEY = '9b0c2f9965f33f91e75ff619d689bb58';
 
 export default class FetchData {
@@ -16,7 +20,11 @@ export default class FetchData {
       const response = result.json();
       return response;
     } catch (err) {
-      console.log('error')
+      console.log('error');
+      error({
+            text: "CRITICAL SERVER ERROR!",
+            delay: 1000,
+        });
     }
   };
   // Получаем фильм по значению
@@ -29,7 +37,10 @@ export default class FetchData {
       const response = result.json();
       return response;
     } catch (err) {
-      console.log('error')
+      error({
+            text: "CRITICAL SERVER ERROR!",
+            delay: 1000,
+        });
     }
   }
   //получем фильм по id
@@ -40,7 +51,10 @@ export default class FetchData {
       const response = result.json();
       return response;
     } catch (err) {
-      console.log('error')
+      error({
+            text: "CRITICAL SERVER ERROR!",
+            delay: 1000,
+        });
     }
   }
 }

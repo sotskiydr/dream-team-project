@@ -8,6 +8,9 @@ import { getData, options } from './pagination';
 import { renderGallery } from './render-gallery';
 import { removeSpinner } from './components/spinner';
 const { galleryList, inputQuery, inputForm, errorMsg, preloader } = refs;
+const { success, error } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
 
 inputForm.addEventListener('submit', onSearchSubmit);
 
@@ -34,6 +37,12 @@ async function onSearchSubmit(e) {
     renderGallery(data, galleryList,'popular');
   } catch (err) {
     console.log('fetchDataByQuery error');
+    if (fetchDataByQuery.query) {
+            error({
+            text: "CRITICAL ERROR!",
+            delay: 1000,
+        });
+    }
   } finally {
     removeSpinner();
   }
