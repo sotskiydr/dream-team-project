@@ -65,9 +65,15 @@ async function getData(id, poster, variable) {
     addToQueue(getData);
   }
   if (variable === 'remove-watched') {
+    if(JSON.parse(localStorage.getItem('watched'))[1] === undefined){
+      mainWarning.classList.remove('hidden');
+    }
     removeToStore(getData, 'watched');
   }
   if (variable === 'remove-queue') {
+    if(JSON.parse(localStorage.getItem('queue'))[1] === undefined){
+      mainWarning.classList.remove('hidden');
+    }
     removeToStore(getData, 'queue');
   }
 }
