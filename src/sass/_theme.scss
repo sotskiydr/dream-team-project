@@ -119,8 +119,8 @@ p.dark-theme {
 
 .theme-switch__icon {
   fill: $accentColor;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   margin-right: 8px;
   margin-left: 8px;
 
@@ -134,8 +134,8 @@ p.dark-theme {
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  width: 64px;
-  height: 32px;
+  width: 53px;
+  height: 21px;
   border-radius: 50em;
   padding: 3px 0;
   // right: 15px;
@@ -173,8 +173,8 @@ p.dark-theme {
 .theme-switch__marker {
   position: relative;
   background-color: $accentColor;
-  width: 26px;
-  height: 26px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
