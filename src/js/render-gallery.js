@@ -6,6 +6,7 @@ import refs from './refs'
 const {galleryList} = refs;
 
 export  function renderGallery(data, place, template) {
+
   onCutDate(data, template);
   onToggleGenresData(data, genresData, template);
   let markup = '';
