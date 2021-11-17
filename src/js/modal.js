@@ -4,6 +4,7 @@ const refs = {
   'closeBtn': document.querySelector('.modal__button_close'),
   'modalBackdrop': document.querySelector('.modal_backdrop'),
   'galleryBox': document.querySelector('.modal-markup'),
+  'buttonUpEl': document.querySelector('[data-button-up]')
 
 };
 const { success, error } = require('@pnotify/core');
@@ -26,6 +27,7 @@ function open(e) {
   if (!e.target.classList.contains('modal')) {
     return;
   }
+  refs.buttonUpEl.classList.add('visually-hidden');
   refs.modalBackdrop.classList.remove('is-hidden');
   renderModal(cardId, dataImg);
   onCloseModalWindow();
