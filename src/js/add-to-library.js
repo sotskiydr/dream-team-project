@@ -5,6 +5,10 @@ import { renderGallery } from './render-gallery';
 
 const fetchData = new API();
 const { modalFilmEl, galleryList, mainWarning,watchedBtn,queueBtn } = refs;
+const { success, error } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
+
 let currentFilm;
 
 
@@ -60,21 +64,37 @@ async function getData(id, poster, variable) {
   // getData.poster_path = poster;
   if (variable === 'watched') {
     addToLibrary(getData);
+      success({
+    text: "Movie was added to Watched!",
+    delay: 1000,
+  });
   }
   if (variable === 'queue') {
     addToQueue(getData);
+      success({
+    text: "Movie was added to Queue!",
+    delay: 1000,
+  });
   }
   if (variable === 'remove-watched') {
     if(JSON.parse(localStorage.getItem('watched'))[1] === undefined){
       mainWarning.classList.remove('hidden');
     }
     removeToStore(getData, 'watched');
+       success({
+    text: "Movie was removed from Watched!",
+    delay: 1000,
+  });
   }
   if (variable === 'remove-queue') {
     if(JSON.parse(localStorage.getItem('queue'))[1] === undefined){
       mainWarning.classList.remove('hidden');
     }
     removeToStore(getData, 'queue');
+       success({
+    text: "Movie was removed from Queue!",
+    delay: 1000,
+  });
   }
 }
 
@@ -86,6 +106,7 @@ function addToLibrary(data) {
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
   localStorage.setItem('watched', JSON.stringify(NextMovie));
+
 }
 
 function addToQueue(data) {
@@ -95,6 +116,7 @@ function addToQueue(data) {
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
   localStorage.setItem('queue', JSON.stringify(NextMovie));
+
 }
 
 function removeToStore(data, storage) {
@@ -115,6 +137,7 @@ function removeToStore(data, storage) {
     galleryList.innerHTML = '';
     renderGallery(data, galleryList, 'library');
   }
+
 }
 
 function addWarningDiv() {
