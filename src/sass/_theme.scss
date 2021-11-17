@@ -17,6 +17,12 @@ body.dark-theme {
     fill: $accentColor;
   }
 
+  // добавление прозрачности на уведомлении
+  .pnotify-container {
+    opacity: 0.75;
+    border-radius: 5px;
+  }
+
   // смена цвета модалки
   .modal_window {
     background: linear-gradient(
