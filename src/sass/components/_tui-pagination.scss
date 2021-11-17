@@ -31,17 +31,17 @@
 .tui-pagination .tui-page-btn {
   display: inline-block;
   position: relative;
-  width: 40px;
+  width: 30px;
   padding: 8px 0 6px;
   margin-left: 10px;
   color: $mainColor;
   font-size: 14px;
-  font-weight: normal;
+  font-weight: 500;
   line-height: 1;
   text-decoration: none;
   vertical-align: middle;
-  border: 2px solid $mainColor;
-  border-radius: 5px;
+  // border: 2px solid $mainColor;
+  border-radius: 50%;
 
   &:hover,
   &:focus {
@@ -79,7 +79,7 @@
   line-height: 26px;
   white-space: nowrap;
   font-weight: normal;
-  border: 2px solid $mainColor;
+  // border: 2px solid $mainColor;
 }
 
 .tui-pagination .tui-prev-is-ellip,

@@ -5,7 +5,7 @@ import { renderGallery } from './render-gallery';
 
 const fetchData = new API();
 const { modalFilmEl, galleryList, mainWarning,watchedBtn,queueBtn } = refs;
-const { success, error } = require('@pnotify/core');
+const { success, notice } = require('@pnotify/core');
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 
@@ -66,14 +66,16 @@ async function getData(id, poster, variable) {
     addToLibrary(getData);
       success({
     text: "Movie was added to Watched!",
-    delay: 1000,
+        delay: 1000,
+        width: '300px',
   });
   }
   if (variable === 'queue') {
     addToQueue(getData);
       success({
     text: "Movie was added to Queue!",
-    delay: 1000,
+        delay: 1000,
+    width: '300px',
   });
   }
   if (variable === 'remove-watched') {
@@ -83,9 +85,10 @@ async function getData(id, poster, variable) {
       }
     }
     removeToStore(getData, 'watched');
-       success({
+       notice({
     text: "Movie was removed from Watched!",
-    delay: 1000,
+         delay: 1000,
+    width: '300px',
   });
   }
   if (variable === 'remove-queue') {
@@ -95,9 +98,10 @@ async function getData(id, poster, variable) {
       }
     }
     removeToStore(getData, 'queue');
-       success({
+       notice({
     text: "Movie was removed from Queue!",
-    delay: 1000,
+         delay: 1000,
+    width: '300px',
   });
   }
 }
