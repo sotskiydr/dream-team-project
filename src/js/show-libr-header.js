@@ -62,7 +62,6 @@ export function showLibrHeader(e) {
   // console.log(JSON.parse(localStorage.getItem('watched')).length)
 
   if (page === 'library' && JSON.parse(localStorage.getItem('watched')).length < 1){
-    console.log('work2')
     myLibraryMarkup('queue');
     watchedBtn.disabled = false;
     addStyle(queueBtn);

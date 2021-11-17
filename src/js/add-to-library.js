@@ -57,7 +57,7 @@ modalFilmEl.addEventListener('click', (e) => {
 
 async function getData(id, poster, variable) {
   const getData = await fetchData.getDescriptionMovie(id).then(r => r);
-  // getData.poster_path = poster;
+  const page = localStorage.getItem('page');
   if (variable === 'watched') {
     addToLibrary(getData);
   }
@@ -66,13 +66,17 @@ async function getData(id, poster, variable) {
   }
   if (variable === 'remove-watched') {
     if(JSON.parse(localStorage.getItem('watched'))[1] === undefined){
-      mainWarning.classList.remove('hidden');
+      if(page === 'library'){
+        mainWarning.classList.remove('hidden');
+      }
     }
     removeToStore(getData, 'watched');
   }
   if (variable === 'remove-queue') {
     if(JSON.parse(localStorage.getItem('queue'))[1] === undefined){
-      mainWarning.classList.remove('hidden');
+      if(page === 'library'){
+        mainWarning.classList.remove('hidden');
+      }
     }
     removeToStore(getData, 'queue');
   }
