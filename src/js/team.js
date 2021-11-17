@@ -1,5 +1,6 @@
 import teamList from './heroes';
 import heroTempL from '../templates/team.hbs';
+import showConfetti from './components/confetti';
 
 
 
@@ -20,6 +21,7 @@ refs.openModalTeam.addEventListener('click', onOpenModal);
 function onOpenModal(e) {
     refs.body.classList.add('show-team');
     e.preventDefault();
+    showConfetti();
     renderTeam(teamList);
     window.addEventListener('keydown', onEscPress);
     refs.closeModalTeam.addEventListener('click', onCloseModal);
