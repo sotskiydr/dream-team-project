@@ -16,4 +16,5 @@ export default {
   tuiPag: document.querySelector('.tui-pagination'),
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),
+  buttonUpEl: document.querySelector('[data-button-up]'),
 };
