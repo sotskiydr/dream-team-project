@@ -10,6 +10,7 @@ import './js/add-to-library';
 import './js/components/spinner';
 import './js/show-libr-header';
 import './js/markup-my-library';
+import './js/button-up';
 
 localStorage.setItem('page','home')
 function isGetWatched() {
