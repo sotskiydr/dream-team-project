@@ -2,11 +2,13 @@ import refs from './refs';
 import modalMarkup from './modal.js';
 import API from './api/API';
 import { renderGallery } from './render-gallery';
-
 const fetchData = new API();
 const { modalFilmEl, galleryList, mainWarning,watchedBtn,queueBtn } = refs;
-let currentFilm;
+const { success, notice } = require('@pnotify/core');
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
 
+let currentFilm;
 
 
 modalFilmEl.addEventListener('click', (e) => {
@@ -14,10 +16,8 @@ modalFilmEl.addEventListener('click', (e) => {
     const id = e.target.id;
     const posterImg = e.target.getAttribute('data-poster');
     getData(id, posterImg, 'remove-watched');
-    // removeToStore('watched')
     e.target.classList.add('modal_btn_wotched');
     e.target.textContent = 'ADD TO WATCH';
-    // addWarningDiv();
     return;
   }
   if (!e.target.classList.contains('modal_btn_queue') && e.target.classList.contains('queue')) {
@@ -26,7 +26,6 @@ modalFilmEl.addEventListener('click', (e) => {
     getData(id, posterImg, 'remove-queue');
     e.target.classList.add('modal_btn_queue');
     e.target.textContent = 'ADD TO QUEUE';
-    // addWarningDiv();
     return;
   }
   if (e.target.classList.contains('modal_btn_wotched') && e.target.classList.contains('watched')) {
@@ -57,27 +56,45 @@ modalFilmEl.addEventListener('click', (e) => {
 
 async function getData(id, poster, variable) {
   const getData = await fetchData.getDescriptionMovie(id).then(r => r);
-  // getData.poster_path = poster;
   if (variable === 'watched') {
     addToLibrary(getData);
+    success({
+      text: "Movie was added to Watched!",
+      delay: 1000,
+      width: '300px',
+  });
   }
   if (variable === 'queue') {
     addToQueue(getData);
+    success({
+      text: "Movie was added to Queue!",
+      delay: 1000,
+      width: '300px',
+  });
   }
   if (variable === 'remove-watched') {
-    if(JSON.parse(localStorage.getItem('watched'))[1] === undefined){
+    if (JSON.parse(localStorage.getItem('watched'))[1] === undefined) {
       mainWarning.classList.remove('hidden');
     }
     removeToStore(getData, 'watched');
+    notice({
+      text: "Movie was removed from Watched!",
+      delay: 1000,
+      width: '300px',
+  });
   }
   if (variable === 'remove-queue') {
-    if(JSON.parse(localStorage.getItem('queue'))[1] === undefined){
+    if (JSON.parse(localStorage.getItem('queue'))[1] === undefined) {
       mainWarning.classList.remove('hidden');
     }
     removeToStore(getData, 'queue');
+    notice({
+      text: "Movie was removed from Queue!",
+      delay: 1000,
+      width: '300px',
+  });
   }
 }
-
 
 function addToLibrary(data) {
   currentFilm = data;
@@ -86,6 +103,7 @@ function addToLibrary(data) {
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
   localStorage.setItem('watched', JSON.stringify(NextMovie));
+
 }
 
 function addToQueue(data) {
@@ -95,6 +113,7 @@ function addToQueue(data) {
   const NextMovie = JSON.parse(currentMovie);
   NextMovie.push(currentFilm);
   localStorage.setItem('queue', JSON.stringify(NextMovie));
+
 }
 
 function removeToStore(data, storage) {
@@ -105,21 +124,17 @@ function removeToStore(data, storage) {
   localStorage.setItem(storage, JSON.stringify(UpdateMovie));
   if (localStorage.getItem('page') === 'library') {
     let getItem = '';
-    if(watchedBtn.classList.contains('active-btn')){
+    if (watchedBtn.classList.contains('active-btn')) {
       getItem = 'watched';
     }
-    if(queueBtn.classList.contains('active-btn')){
-      getItem = 'queue'
+    if (queueBtn.classList.contains('active-btn')) {
+      getItem = 'queue';
     }
     const data = JSON.parse(localStorage.getItem(getItem));
     galleryList.innerHTML = '';
     renderGallery(data, galleryList, 'library');
   }
-}
-
-function addWarningDiv() {
-  const page = localStorage.getItem('page');
-  if (page === 'library' && galleryList.textContent === '') {
-    mainWarning.classList.remove('hidden');
+  if(galleryList.textContent !== ''){
+    mainWarning.classList.add('hidden');
   }
 }

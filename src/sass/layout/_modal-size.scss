@@ -1,14 +1,3 @@
-.modal-markup {
-  display: block;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-}
-.scroll{
- 
-  display: flex;
-}
 .modal_backdrop {
   position: fixed;
   top: 0;
@@ -19,7 +8,6 @@
   transition: opacity $transitionDuration $transitionAnim,
     visibility $transitionDuration $transitionAnim;
   z-index: 3;
-  
 
   transition: all $transitionDuration linear $transitionDuration;
 
@@ -32,6 +20,7 @@
     transition: opacity 500ms $transitionAnim, visibility 500ms $transitionAnim;
   }
 }
+
 .modal_window {
   background-color: $additionalColor;
   position: absolute;
@@ -136,6 +125,19 @@
     cursor: pointer;
   }
 }
+
+.modal-markup {
+  display: block;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.scroll {
+  display: flex;
+}
+
 .modal-table {
   width: auto;
   height: auto;

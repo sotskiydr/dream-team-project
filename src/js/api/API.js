@@ -1,6 +1,7 @@
 const { success, error } = require('@pnotify/core');
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/Angeler.css';
 
 const KEY = '9b0c2f9965f33f91e75ff619d689bb58';
 
