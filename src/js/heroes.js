@@ -21,7 +21,7 @@ export default [
     },
     
     {
-        name: 'Eugenia',
+        name: 'Evgeniya',
         photo: photoEugeniya,
         position: 'Scrum Master',
         linkedin: 'https://www.linkedin.com/',
