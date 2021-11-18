@@ -45,20 +45,23 @@ body.dark-theme {
   }
 
   // смена цвета модалки dream-team
-  .team__modal {
-    background: $secondColor;
-
-    p {
-      color: $mainColor;
-    }
+  .team-wrapper {
+    background: linear-gradient(
+      90deg,
+      rgb(36, 33, 33) 20%,
+      rgb(65, 45, 45) 50%,
+      rgb(88, 64, 64) 80%
+    );
   }
 
-  .team__btn {
-    background-color: transparent;
+  p {
+    color: $footerBgc;
   }
-
-  .hero__link {
-    box-shadow: none;
+  .hero__position {
+    color: $accentColor;
+  }
+  .team__item {
+    background-color: rgba(90, 51, 51, 0.8);
   }
 
   //.footer__text-conteiner

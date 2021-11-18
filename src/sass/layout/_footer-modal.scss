@@ -13,6 +13,7 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
+ 
 
   body.show-team & {
     opacity: 1;
@@ -26,8 +27,6 @@
   top: 0;
   display: flex;
   padding: 40px;
-  margin: 0 auto;
-  max-width: 100%;
   z-index: 10;
   background-color: $footerBgc;
   border-radius: 4px;
@@ -115,6 +114,7 @@
 @media screen and (min-width: 768px) {
   .team-wrapper {
     max-width: 650px;
+    margin-top: 4em;
   }
 }
 
