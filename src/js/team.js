@@ -9,6 +9,7 @@ const refs = {
   closeModalTeam: document.querySelector('.js-team__close-modal'),
   backdropTeam: document.querySelector('.js-team__backdrop'),
   canvas: document.getElementById('my-canvas'),
+  'buttonUpEl': document.querySelector('[data-button-up]')
 };
 
 refs.openModalTeam.addEventListener('click', onOpenModal);
@@ -22,6 +23,7 @@ function onOpenModal(e) {
   refs.closeModalTeam.addEventListener('click', onCloseModal);
   refs.backdropTeam.addEventListener('click', onBackdrop);
   refs.canvas.addEventListener('click', onBackdrop);
+  refs.buttonUpEl.classList.add('visually-hidden');
 }
 
 function renderTeam() {
