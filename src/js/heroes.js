@@ -15,7 +15,7 @@ export default [
     {
         name: 'Dima',
         photo: photoDima,
-        position: 'Team Lider',
+        position: 'Team Lead',
         linkedin: 'https://www.linkedin.com/in/dima-sotskiy-36bb361ba/',
         city: 'Odessa',
     },
