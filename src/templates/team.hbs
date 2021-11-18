@@ -1,16 +1,12 @@
 {{#each this}}
-<li class="hero">
-        <a class="hero__link" href="{{linkedin}}"><div class="polaroid">
-                {{!-- <p>Filmoteca'21</p> --}}
-                <img class="hero__image" src="{{photo}}" alt="{{name}}">
-        </div>
-        </a>
-        
-        
-        <div class="hero__info">
-        <p class="hero__name">{{name}}</p>
-        <p class="hero__position">{{position}}</p>
-        <p class="hero__city">{{city}}</p>
-         </div>
-</li>
+  <li class='team__item'>
+    <a class='hero__link' href='{{linkedin}}'>
+      <img class='hero__image' src='{{photo}}' alt='{{name}}' />
+    </a>
+    <div class='hero__info'>
+      <p class='hero__name'>{{name}}</p>
+      <p class='hero__position'>{{position}}</p>
+      <p class='hero__city'>{{city}}</p>
+    </div>
+  </li>
 {{/each}}

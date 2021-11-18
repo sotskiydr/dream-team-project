@@ -35,178 +35,23 @@
     margin-right: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  // ===========TEAM===========
-
-  .team {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow-y: scroll;
-    z-index: 3;
-    background-color: rgba(0, 0, 0, 0.7);
-
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-
-    body.show-team & {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-  }
 
   // ========FOOTER-MODAL===========
-  .team__modal,
+
   .team__btn {
     position: absolute;
-    background-color: $footerBgc;
+    background-color: transparent;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
   }
-
-  .team__modal {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-
-    display: inline-block;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 4px;
-    text-align: center;
-    // background-image: url(../images/team/code.jpg);
-    // background-repeat: no-repeat;
-    // background-size: cover;
-  }
-}
-
-.team__btn {
-  // position: relative;
-  top: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  // background-color: rgb(255, 107, 8, 0.7);
-  // box-shadow: rgb(129 188 204) 4px 4px 2px;
-  // border: 1px solid black;
-  // border-radius: 50%;
-}
-
-.team__eye {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-  width: 30px;
-  height: 30px;
-}
-
-.team__eye:hover,
-.team__eye:focus {
-  filter: drop-shadow(0 0 4px $mainColor);
-}
-
-// ===========HEROES STYLE===========
-
-.team__herous {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -5px;
-}
-
-.hero {
-  margin: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-content: space-around;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: rgb(245, 241, 241, 0.5);
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-}
-
-.team__title {
-  display: inline-block;
-  justify-content: center;
-  margin-bottom: 20px;
-  color: $accentColor;
-  text-shadow: 4px 4px 2px rgba(129, 188, 204, 1);
-}
-.hero__link {
-  position: relative;
-  margin-bottom: 10px;
-  cursor: pointer;
-  box-shadow: -18px 0 20px -20px #333, 18px 0 20px -20px #333;
-
-  //  ==========LINKEDN TAG ============
-  &::after {
-    content: ' ';
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    bottom: 35px;
-    right: 8px;
-    background-image: url(../images/team/linkedn.png);
-    background-size: 100%;
-    background-color: $footerBgc;
-    background-position: 50%;
-    background-repeat: no-repeat;
-  }
-}
-
-.hero__image {
-  margin: 0;
-  width: 220px;
-  height: 295px;
-}
-
-.hero__info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin-bottom: 25px;
-}
-
-.hero__name {
-  margin-top: 25px;
-  color: $mainColor;
-  text-align: center;
-  font-weight: 700;
-  font-size: 24px;
-  // -webkit-text-stroke-width: 0.5px;
-  // -webkit-text-stroke-color: #f7f7f7;
-}
-
-.hero__position {
-  margin-top: 10px;
-  color: $mainColor;
-  font-size: 22px;
-}
-
-.hero__city {
-  margin-top: 10px;
-  color: $mainColor;
-  font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {
   .footer__section {
     display: flex;
-  }
-  .team__modal {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    max-width: 768px;
-    height: 100%;
   }
 
   .footer__text-conteiner {
@@ -221,81 +66,6 @@
     margin-bottom: 0;
     margin-top: 2px;
   }
-
-  .hero {
-    width: calc(100% / 2 - 10px);
-  }
-
-  .hero__name {
-    font-size: 26px;
-  }
-
-  .hero__position {
-    font-size: 24px;
-  }
-
-  .hero__city {
-    font-size: 22px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .team__modal {
-    max-width: 1024px;
-    height: 100%;
-  }
-
-  .team__herous {
-    max-width: 1024px;
-    // height: 50%;
-  }
-
-  .hero {
-    width: calc(100% / 3 - 10px);
-  }
-
-  // .hero__image:focus,
-  // .hero__image:hover {
-  //   -moz-transform: translate(3px, 3px) skew(3deg, 2deg);
-  //   -webkit-transform: translate(3px, 3px) skew(3deg, 2deg);
-  //   -o-transform: translate(3px, 3px) skew(3deg, 2deg);
-  //   -ms-transform: translate(3px, 3px) skew(3deg, 2deg);
-  //   transform: translate(3px, 3px) skew(3deg, 2deg);
-  // }
-}
-
-.hero__image {
-  transition: transform 0.2s linear;
-}
-.hero__image:hover,
-.hero__image:focus {
-  transform: scale(1.1);
-  box-shadow: 4px 3px 12px -1px rgba(255, 107, 8, 0.5);
-}
-
-// =============PHOTO-EFFECTS==========
-
-.polaroid {
-  position: relative;
-  width: 220px;
-  height: 295px;
-  margin-top: 10px;
-}
-.polaroid img {
-  border: 10px solid $additionalColor;
-  border-bottom: 45px solid $additionalColor;
-  // -webkit-box-shadow: 3px 3px 3px #777;
-  // -moz-box-shadow: 3px 3px 3px #777;
-  //box-shadow: 3px 3px 3px #777;
-}
-
-.polaroid p {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  bottom: 0px;
-  font: 400 18px/1 'Kaushan Script', cursive;
-  color: #888;
 }
 
 // =============HEART=======
