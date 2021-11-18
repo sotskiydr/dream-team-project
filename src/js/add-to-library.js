@@ -58,19 +58,18 @@ async function getData(id, poster, variable) {
   const getData = await fetchData.getDescriptionMovie(id).then(r => r);
   if (variable === 'watched') {
     addToLibrary(getData);
-
-      success({
-    text: "Movie was added to Watched!",
-        delay: 1000,
-        width: '300px',
+    success({
+      text: "Movie was added to Watched!",
+      delay: 1000,
+      width: '300px',
   });
   }
   if (variable === 'queue') {
     addToQueue(getData);
-      success({
-    text: "Movie was added to Queue!",
-        delay: 1000,
-    width: '300px',
+    success({
+      text: "Movie was added to Queue!",
+      delay: 1000,
+      width: '300px',
   });
   }
   if (variable === 'remove-watched') {
@@ -78,10 +77,10 @@ async function getData(id, poster, variable) {
       mainWarning.classList.remove('hidden');
     }
     removeToStore(getData, 'watched');
-       notice({
-    text: "Movie was removed from Watched!",
-         delay: 1000,
-    width: '300px',
+    notice({
+      text: "Movie was removed from Watched!",
+      delay: 1000,
+      width: '300px',
   });
   }
   if (variable === 'remove-queue') {
@@ -89,14 +88,13 @@ async function getData(id, poster, variable) {
       mainWarning.classList.remove('hidden');
     }
     removeToStore(getData, 'queue');
-       notice({
-    text: "Movie was removed from Queue!",
-         delay: 1000,
-    width: '300px',
+    notice({
+      text: "Movie was removed from Queue!",
+      delay: 1000,
+      width: '300px',
   });
   }
 }
-
 
 function addToLibrary(data) {
   currentFilm = data;
