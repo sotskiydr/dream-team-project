@@ -1,5 +1,4 @@
 import refs from './refs';
-import modalMarkup from './modal.js';
 import API from './api/API';
 import { renderGallery } from './render-gallery';
 const fetchData = new API();

@@ -18,7 +18,9 @@
                 <li class='gallery__description-item modal'>{{name}}</li>{{/each}}{{else}}<p>No genres</p>{{/if}}&nbsp;|
             </ul>
             <div>&nbsp;{{#if release_date}}{{release_date}}{{else if
-                first_air_date}}{{first_air_date}}{{else}}<span>N/a</span>{{/if}}</div>
+                first_air_date}}{{first_air_date}}{{else}}<span>N/a</span>{{/if}}
+            </div>
+          <div class='gallery__description-vote modal'>{{vote_average}}</div>
         </div>
     </div>
 </li>
