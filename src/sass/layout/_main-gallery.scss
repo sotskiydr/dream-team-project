@@ -77,10 +77,10 @@
 
 .gallery__description-text {
   display: flex;
-
   color: $accentColor;
   font-size: 12px;
-  line-height: 1.33;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .gallery__description-list {
@@ -97,10 +97,10 @@
   align-items: center;
   margin-left: 10px;
   width: 36px;
-  height: 16px;
+  height: 14px;
 
+  font-weight: 300;
   font-size: 12px;
-  line-height: 1.17;
   color: $additionalColor;
   background: $accentColor;
   border-radius: 5px;

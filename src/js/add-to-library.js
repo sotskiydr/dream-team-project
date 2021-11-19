@@ -60,7 +60,7 @@ async function getData(id, poster, variable) {
     success({
       text: "Movie was added to Watched!",
       delay: 1000,
-      width: '300px',
+      width: '320px',
   });
   }
   if (variable === 'queue') {
@@ -68,7 +68,7 @@ async function getData(id, poster, variable) {
     success({
       text: "Movie was added to Queue!",
       delay: 1000,
-      width: '300px',
+      width: '320px',
   });
   }
   if (variable === 'remove-watched') {
@@ -79,7 +79,7 @@ async function getData(id, poster, variable) {
     notice({
       text: "Movie was removed from Watched!",
       delay: 1000,
-      width: '300px',
+      width: '320px',
   });
   }
   if (variable === 'remove-queue') {
@@ -90,7 +90,7 @@ async function getData(id, poster, variable) {
     notice({
       text: "Movie was removed from Queue!",
       delay: 1000,
-      width: '300px',
+      width: '320px',
   });
   }
 }
