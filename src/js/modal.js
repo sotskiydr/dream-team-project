@@ -32,12 +32,15 @@ function open(e) {
   renderModal(cardId, dataImg);
   onCloseModalWindow();
 
-  refs.modalBackdrop.addEventListener('wheel', (e)=> {
-    console.log("scroll");
-    e.preventDefault();
-},
-{passive:false}
-);
+  if(document.documentElement.clientWidth > 768){
+    refs.modalBackdrop.addEventListener('wheel', (e)=> {
+      console.log("scroll");
+      e.preventDefault();
+    
+  },
+  {passive:false}
+  );
+  }
 }
 
 function onCloseModalWindow() {
